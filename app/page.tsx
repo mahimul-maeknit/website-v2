@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import Header from "@/components/header"
-import { Linkedin, Phone, Instagram, Mail, MapPin, House } from "lucide-react"
+import { Linkedin, Phone, Instagram, Mail, MapPin } from "lucide-react"
 
 export default function Page() {
   return (
@@ -12,6 +12,7 @@ export default function Page() {
 
       {/* HERO FRAME (carousel placeholder) */}
       <section className="hero-frame" aria-label="Featured">
+        <div className="rule"></div> {/* Top rule */}
         <div className="container">
           <Image
             src="/images/carousel.png"
@@ -22,6 +23,7 @@ export default function Page() {
             className="carousel-image"
           />
         </div>
+        <div className="rule"></div> {/* Bottom rule */}
       </section>
 
       {/* BOTTOM brand (nav + round logo) */}
@@ -63,7 +65,7 @@ export default function Page() {
           <ul className="social">
             <li>
               <Link href="/" aria-label="Website">
-                <House size={18} />
+                <MapPin size={18} />
               </Link>
             </li>
             <li>

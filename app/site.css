@@ -89,8 +89,11 @@ video {
 }
 .rule {
   border-bottom: 2px solid var(--border);
-  width: 1500px;
+  width: 100%;
+  max-width: var(--max-w); /* aligns with container width */
+  margin: 0 auto;
 }
+
 
 /* Type scale based on your spec */
 h1,
@@ -409,4 +412,14 @@ p {
   font-weight: var(--menu-weight);
   text-transform: uppercase;
   letter-spacing: 0.22em;
+}
+.prose h2,
+.prose h3 {
+  font-size: var(--heading-size);
+  font-weight: var(--heading-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 4px;
+  margin-bottom: 16px;
 }
