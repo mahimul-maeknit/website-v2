@@ -244,15 +244,19 @@ export default function ServicesPage() {
 
             <div className="space-y-4">
               <div>
-                <h3 className="text-sm font-bold flex items-center gap-2">
-                  NEW YORK
+                <div className="flex items-center justify-between bg-pink-200 border-y-2 border-black px-4 py-2">
+                  <h3 className="text-lg font-bold tracking-wider uppercase">
+                    NEW YORK
+                  </h3>
                   <Image
                     src="/images/us_flag.png"
                     alt="US Flag"
-                    width={24}
-                    height={16}
+                    width={32}
+                    height={20}
+                    className="object-contain"
                   />
-                </h3>
+                </div>
+
                 <p className="text-sm">
                   Our 3,600-square-foot lab in Jamaica, Queens, is home to our
                   most advanced knitting and linking equipment. Here, we bring
@@ -277,15 +281,19 @@ export default function ServicesPage() {
               </div>
 
               <div>
-                <h3 className="text-sm font-bold flex items-center gap-2">
-                  LONDON, UK
+                <div className="flex items-center justify-between bg-pink-200 border-y-2 border-black px-4 py-2">
+                  <h3 className="text-lg font-bold tracking-wider uppercase">
+                    LONDON, UK
+                  </h3>
                   <Image
                     src="/images/uk_flag.png"
                     alt="UK Flag"
-                    width={24}
-                    height={16}
+                    width={32}
+                    height={20}
+                    className="object-contain"
                   />
-                </h3>
+                </div>
+
                 <p className="text-sm">
                   Our London lab, located in the vibrant Haringey Warehouse
                   District, is part of the Fashion Enter network. This
