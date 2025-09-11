@@ -6,7 +6,7 @@ interface PageHeaderProps {
   title: string
 }
 
-export default function Header({ title }: PageHeaderProps) {
+export default function PageHeader({ title }: PageHeaderProps) {
   return (
     <header className="py-6">
       <div className="max-w-7xl mx-auto px-6">

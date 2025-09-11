@@ -1,11 +1,11 @@
-import Footer from "@/components/footer"
-import Header from "@/components/header"
+import PageFooter from "@/components/page-footer"
+import PageHeader from "@/components/header"
 import Link from "next/link"
 
 export default function ServicesPage() {
   return (
     <>
-      <Header />
+      <PageHeader title="Services" />
       <main id="main">
         <section id="services" className="section section-muted">
           <div className="container">
@@ -53,7 +53,7 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <PageFooter />
     </>
   )
 }

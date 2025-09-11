@@ -1,10 +1,10 @@
-import Footer from "@/components/footer"
-import Header from "@/components/header"
+import PageFooter from "@/components/page-footer"
+import PageHeader from "@/components/header"
 
 export default function WorkPage() {
   return (
     <>
-      <Header />
+      <PageHeader title="Work" />
       <main id="main">
         <section id="work" className="section">
           <div className="container">
@@ -38,7 +38,7 @@ export default function WorkPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <PageFooter />
     </>
   )
 }

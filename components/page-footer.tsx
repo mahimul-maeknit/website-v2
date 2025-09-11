@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Footer() {
+export default function PageFooter() {
   return (
     <footer className="pt-0 pb-6">
       <div className="max-w-7xl mx-auto px-6">
@@ -21,13 +21,15 @@ export default function Footer() {
           </Link>
 
           <div className="brand-logo">
-            <Image
-              src="/brand/round_logo.png"
-              alt="MAEKNIT round logo"
-              width={60}
-              height={60}
-              className="block"
-            />
+              <Link href="/" className="brand" aria-label="MAEKNIT Home">
+                <Image
+                src="/brand/round_logo.png"
+                alt="MAEKNIT round logo"
+                width={60}
+                height={60}
+                className="block"
+                />
+            </Link>
           </div>
         </div>
       </div>

@@ -1,10 +1,10 @@
-import Footer from "@/components/footer"
-import Header from "@/components/header"
 
+import PageFooter from "@/components/page-footer"
+import PageHeader from "@/components/header"
 export default function LabsPage() {
   return (
     <>
-      <Header />
+      <PageHeader title="Labs" />
       <main id="main">
         <section id="labs" className="section section-muted">
           <div className="container">
@@ -44,7 +44,7 @@ export default function LabsPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <PageFooter />
     </>
   )
 }

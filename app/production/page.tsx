@@ -1,10 +1,10 @@
-import Footer from "@/components/footer"
-import Header from "@/components/header"
+import PageFooter from "@/components/page-footer"
+import PageHeader from "@/components/header"
 
 export default function ProductionPage() {
   return (
     <>
-      <Header />
+      <PageHeader title="Production" />
       <main id="main">
         <section id="production" className="section">
           <div className="container prose">
@@ -19,7 +19,7 @@ export default function ProductionPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <PageFooter />
     </>
   )
 }
