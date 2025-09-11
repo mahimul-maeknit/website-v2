@@ -1,6 +1,6 @@
 
 import PageFooter from "@/components/page-footer"
-import PageHeader from "@/components/header"
+import PageHeader from "@/components/page-header"
 export default function LabsPage() {
   return (
     <>

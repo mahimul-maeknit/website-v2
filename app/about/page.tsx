@@ -8,9 +8,6 @@ export default function AboutPage() {
 
       <main className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex justify-end items-start mb-8">
-            <h2 className="text-lg font-medium tracking-wider">REDEFINING KNITWEAR</h2>
-          </div>
 
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -60,31 +57,21 @@ export default function AboutPage() {
 
             {/* Right Column - Images */}
             <div className="space-y-4">
-            <div className="h-[320px] overflow-hidden">
-                <img
-                  src="/images/ab1.png"
-                  alt="Knit fabric texture detail"
-                  className="w-full h-full object-cover"
-                />
+              <div className="h-[320px] overflow-hidden">
+                <img src="/images/ab1.png" alt="Knit fabric texture detail" className="w-full h-full object-cover" />
               </div>
               <div className="h-[320px] overflow-hidden">
-              <img
-                  src="/images/ab2.png"
-                  alt="Textile material close-up"
-                  className="w-full h-full object-cover"
-                />
-                </div>
+                <img src="/images/ab2.png" alt="Textile material close-up" className="w-full h-full object-cover" />
               </div>
+            </div>
           </div>
-
-         
 
           {/* Call to Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-2">
-            <button className="px-8 py-3 bg-pink-200 text-black font-medium tracking-wider hover:bg-pink-300 transition-colors">
+            <button className="px-8 py-3 bg-pink-200 text-black font-medium tracking-wider rounded-lg hover:bg-pink-300 transition-colors">
               BOOK A CONSULTATION
             </button>
-            <button className="px-8 py-3 border border-black text-black font-medium tracking-wider hover:bg-black hover:text-white transition-colors">
+            <button className="px-8 py-3 bg-pink-200 text-black font-medium tracking-wider rounded-lg hover:bg-pink-300 transition-colors">
               EXPLORE OUR LABS
             </button>
           </div>
