@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import Header from "@/components/header"
-import { Linkedin, Phone, Instagram, Mail, MapPin, Globe } from "lucide-react"
+import { Linkedin, Phone, Instagram, Mail, MapPin, House } from "lucide-react"
 
 export default function Page() {
   return (
@@ -13,9 +13,14 @@ export default function Page() {
       {/* HERO FRAME (carousel placeholder) */}
       <section className="hero-frame" aria-label="Featured">
         <div className="container">
-          <div className="media-placeholder" aria-label="Carousel placeholder">
-            <span>Carousel image goes here</span>
-          </div>
+          <Image
+            src="/images/carousel.png"
+            alt="MAEKNIT carousel image"
+            width={1200}
+            height={520}
+            priority
+            className="carousel-image"
+          />
         </div>
       </section>
 
@@ -44,10 +49,10 @@ export default function Page() {
           </nav>
           <div className="brand-logo">
             <Image
-              src="/brand/round_logo_no_bg.svg"
+              src="/brand/round_logo.png"
               alt="MAEKNIT round logo"
-              width={128} // Increased size to be more prominent
-              height={128} // Increased size to be more prominent
+              width={100} // Increased size to be more prominent
+              height={100} // Increased size to be more prominent
             />
           </div>
         </div>
@@ -58,7 +63,7 @@ export default function Page() {
           <ul className="social">
             <li>
               <Link href="/" aria-label="Website">
-                <Globe size={18} />
+                <House size={18} />
               </Link>
             </li>
             <li>
@@ -91,8 +96,6 @@ export default function Page() {
       </section>
 
       <main id="main">{/* No content here, as per your request for the homepage */}</main>
-
-      
     </>
   )
 }

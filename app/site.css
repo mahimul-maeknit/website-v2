@@ -89,6 +89,7 @@ video {
 }
 .rule {
   border-bottom: 2px solid var(--border);
+  width: 1500px;
 }
 
 /* Type scale based on your spec */
@@ -209,19 +210,12 @@ p {
   padding-top: 18px;
   padding-bottom: 18px;
 }
-.media-placeholder {
-  border: 1px solid #cfcfcf;
-  background: #f3f3f3;
+
+.carousel-image {
+  width: 100%;
   height: clamp(220px, 38vw, 520px);
-  display: grid;
-  place-items: center;
-  color: #666;
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.media-placeholder span {
-  opacity: 0.8;
+  object-fit: cover;
+  border: 1px solid #cfcfcf;
 }
 
 /* Bottom brand (nav + round logo) */
