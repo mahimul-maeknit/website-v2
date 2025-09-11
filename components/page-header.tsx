@@ -23,12 +23,7 @@ export default function PageHeader({ title }: PageHeaderProps) {
                   </Link>
                 </li>
                 <li className="border border-black p-1">
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="LinkedIn"
-                  >
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                     <Linkedin size={14} />
                   </a>
                 </li>
@@ -38,12 +33,7 @@ export default function PageHeader({ title }: PageHeaderProps) {
                   </a>
                 </li>
                 <li className="border border-black p-1">
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Instagram"
-                  >
+                  <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
                     <Instagram size={14} />
                   </a>
                 </li>
@@ -62,21 +52,15 @@ export default function PageHeader({ title }: PageHeaderProps) {
 
             {/* Row 2: Title left, tagline right */}
             <div className="flex items-center justify-between">
-              <h1 className="text-lg font-semibold tracking-wider uppercase">
-                {title}
-              </h1>
-              <h2 className="text-lg font-medium tracking-wider">
-                REDEFINING KNITWEAR
-              </h2>
-            </div>
+            <h1>ABOUT</h1>   {/* Heading – Demi Bold, 22px */}
+            <h2 className="subheading">REDEFINING KNITWEAR</h2>   {/* Subheading – Extra Light, 17px */}
+              </div>
           </>
         ) : (
           <>
             {/* Row: Title left, icons right */}
             <div className="flex items-center justify-between">
-              <h1 className="text-lg font-semibold tracking-wider uppercase">
-                {title}
-              </h1>
+              <h1 className="text-lg font-semibold tracking-wider uppercase font-sans">{title}</h1>
               <ul className="flex items-center gap-2">
                 <li className="border border-black p-1">
                   <Link href="/" aria-label="Website">
@@ -84,12 +68,7 @@ export default function PageHeader({ title }: PageHeaderProps) {
                   </Link>
                 </li>
                 <li className="border border-black p-1">
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="LinkedIn"
-                  >
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                     <Linkedin size={14} />
                   </a>
                 </li>
@@ -99,12 +78,7 @@ export default function PageHeader({ title }: PageHeaderProps) {
                   </a>
                 </li>
                 <li className="border border-black p-1">
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Instagram"
-                  >
+                  <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
                     <Instagram size={14} />
                   </a>
                 </li>
