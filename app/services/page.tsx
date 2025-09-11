@@ -352,10 +352,10 @@ export default function ServicesPage() {
                 <button
                   key={section}
                   onClick={() => setActiveSection(section)}
-                  className={`text-sm font-medium uppercase tracking-wide hover:opacity-70 transition-opacity ${
+                  className={`cursor-pointer text-sm font-medium uppercase tracking-wide transition-colors ${
                     activeSection === section
-                      ? "border-b-2 border-black pb-1"
-                      : ""
+                      ? "text-pink-600"
+                      : "text-black hover:text-pink-600"
                   }`}
                 >
                   {section === "ourlabs" ? "OUR LABS" : section}
