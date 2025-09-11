@@ -21,15 +21,26 @@ export default function ServicesPage() {
       title: "PRODUCTION",
       content: (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          {/* Left Image */}
           <div className="aspect-square relative">
             <Image
-              src="/images/ab1.jpg"
+              src="/images/1.png"
               alt="Production"
               fill
               className="object-cover"
             />
           </div>
+
+          {/* Right Column */}
           <div className="space-y-6">
+            {/* Heading inside right column */}
+            <div>
+              <h2 className="text-2xl font-bold tracking-wide uppercase">
+                PRODUCTION
+              </h2>
+              <div className="w-full border-t-2 border-black mt-2 mb-6"></div>
+            </div>
+
             <p className="text-sm font-medium">
               <span className="font-bold">MAEKNIT</span> offers small-batch and
               on-demand production in our zero-waste labs in New York and London
@@ -38,20 +49,24 @@ export default function ServicesPage() {
               manufacturers across the USA, UK, Peru, Turkey, Romania, Bulgaria,
               Spain, Bangladesh, Canada, Madagascar & more.
             </p>
+
             <p className="text-sm font-bold">
               No minimums. Transparent pricing. Clean, energy-efficient
               machinery.
             </p>
+
             <p className="text-sm">
               Whether you're developing a single standout piece or scaling a
               full collection, we adapt to your needs — with the same standard
               of excellence at every level.
             </p>
+
             <p className="text-sm">
               The future of knitwear is responsive. We're built to move with
               you. From one piece to thousands,{" "}
               <span className="font-bold">without compromise</span>
             </p>
+
             <button className="bg-pink-200 text-black px-8 py-3 rounded-full text-sm font-medium hover:bg-pink-300 transition-colors">
               BOOK A CONSULTATION
             </button>
@@ -65,13 +80,19 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="aspect-square relative">
             <Image
-              src="/images/ab1.jpg"
+              src="/images/3.png"
               alt="Swatches"
               fill
               className="object-cover"
             />
           </div>
           <div className="space-y-6">
+            <div>
+              <h2 className="text-2xl font-bold tracking-wide uppercase">
+                SWATCHES
+              </h2>
+              <div className="w-full border-t-2 border-black mt-2 mb-6"></div>
+            </div>
             <p className="text-sm font-bold">
               SWATCHES ARE THE BLUEPRINT OF EXCEPTIONAL KNITWEAR.
             </p>
@@ -100,13 +121,19 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="aspect-square relative">
             <Image
-              src="/images/ab1.jpg"
+              src="/images/3.png"
               alt="Development"
               fill
               className="object-cover"
             />
           </div>
           <div className="space-y-6">
+            <div>
+              <h2 className="text-2xl font-bold tracking-wide uppercase">
+                DEVELOPMENT
+              </h2>
+              <div className="w-full border-t-2 border-black mt-2 mb-6"></div>
+            </div>
             <p className="text-sm font-bold">FROM VISION TO PRECISION.</p>
             <p className="text-sm">
               <span className="font-bold">MAEKNIT</span> takes you from sketch
@@ -143,13 +170,19 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="aspect-square relative">
             <Image
-              src="/images/ab1.jpg"
+              src="/images/3.png"
               alt="Education"
               fill
               className="object-cover"
             />
           </div>
           <div className="space-y-6">
+            <div>
+              <h2 className="text-2xl font-bold tracking-wide uppercase">
+                EDUCATION
+              </h2>
+              <div className="w-full border-t-2 border-black mt-2 mb-6"></div>
+            </div>
             <p className="text-sm">
               We train the next generation of knitwear leaders through hands-on,
               in-house instruction led by seasoned industry professionals.
@@ -187,13 +220,19 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="aspect-square relative">
             <Image
-              src="/images/ab1.jpg"
+              src="/images/3.png"
               alt="Our Labs"
               fill
               className="object-cover"
             />
           </div>
           <div className="space-y-6">
+            <div>
+              <h2 className="text-2xl font-bold tracking-wide uppercase">
+                OUR LABS
+              </h2>
+              <div className="w-full border-t-2 border-black mt-2 mb-6"></div>
+            </div>
             <p className="text-sm font-bold">THE FUTURE OF THE FACTORY</p>
             <p className="text-sm">
               At Maeknit, we operate two state-of-the-art labs, one in New York
@@ -208,7 +247,7 @@ export default function ServicesPage() {
                 <h3 className="text-sm font-bold flex items-center gap-2">
                   NEW YORK
                   <Image
-                    src="/us-flag-waving.png"
+                    src="/images/us_flag.png"
                     alt="US Flag"
                     width={24}
                     height={16}
@@ -241,7 +280,7 @@ export default function ServicesPage() {
                 <h3 className="text-sm font-bold flex items-center gap-2">
                   LONDON, UK
                   <Image
-                    src="/uk-flag.png"
+                    src="/images/uk_flag.png"
                     alt="UK Flag"
                     width={24}
                     height={16}
@@ -279,80 +318,93 @@ export default function ServicesPage() {
     },
   };
 
+  const serviceImages = {
+    production: "/images/1.png",
+    swatches: "/images/3.png",
+    development: "/images/3.png",
+    education: "/images/4.png",
+  };
   return (
-    
     <div className="flex flex-col min-h-screen">
-  <PageHeader title="SERVICES" />
+      <PageHeader title="SERVICES" />
 
-  <main className="flex-grow">
-    <div className="max-w-7xl mx-auto px-6">
-      <nav className="flex justify-between items-center py-4">
-        <div className="flex space-x-8">
-          {(["production", "swatches", "development", "education", "ourlabs"] as const).map(
-            (section) => (
-              <button
-                key={section}
-                onClick={() => setActiveSection(section)}
-                className={`text-sm font-medium uppercase tracking-wide hover:opacity-70 transition-opacity ${
-                  activeSection === section ? "border-b-2 border-black pb-1" : ""
-                }`}
-              >
-                {section === "ourlabs" ? "OUR LABS" : section}
-              </button>
-            )
-          )}
-        </div>
-      </nav>
-      <hr className="border-t-2 border-black" />
-    </div>
-
-    <div className="max-w-7xl mx-auto px-6 py-12">
-      {activeSection ? (
-        <div className="space-y-8">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold tracking-wide">
-              {serviceContent[activeSection].title}
-            </h1>
-            <div className="w-full h-px bg-black mt-4 mb-8"></div>
-          </div>
-          {serviceContent[activeSection].content}
-        </div>
-      ) : (
-        <div className="space-y-8">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold tracking-wide mb-4">SERVICES</h1>
-            <div className="w-full h-px bg-black mb-8"></div>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {(["production", "swatches", "development", "education"] as const).map(
-              (section) => (
+      <main className="flex-grow">
+        <div className="max-w-7xl mx-auto px-6">
+          <nav className="flex justify-between items-center py-4">
+            <div className="flex space-x-8">
+              {(
+                [
+                  "production",
+                  "swatches",
+                  "development",
+                  "education",
+                  "ourlabs",
+                ] as const
+              ).map((section) => (
                 <button
                   key={section}
                   onClick={() => setActiveSection(section)}
-                  className="aspect-square relative group overflow-hidden"
+                  className={`text-sm font-medium uppercase tracking-wide hover:opacity-70 transition-opacity ${
+                    activeSection === section
+                      ? "border-b-2 border-black pb-1"
+                      : ""
+                  }`}
                 >
-                  <Image
-                    src="/images/ab1.jpg"
-                    alt={section}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
-                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium uppercase tracking-wide">
-                    {section === "ourlabs" ? "OUR LABS" : section}
-                  </div>
+                  {section === "ourlabs" ? "OUR LABS" : section}
                 </button>
-              )
-            )}
-          </div>
+              ))}
+            </div>
+          </nav>
+          <hr className="border-t-2 border-black" />
         </div>
-      )}
+
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          {activeSection ? (
+            <div className="space-y-8">
+              {serviceContent[activeSection].content}
+            </div>
+          ) : (
+            <div className="space-y-8">
+              <div className="text-center">
+                <h1 className="text-2xl font-bold tracking-wide mb-4">
+                  SERVICES
+                </h1>
+                <div className="w-full h-px bg-black mb-8"></div>
+              </div>
+
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {(
+                  [
+                    "production",
+                    "swatches",
+                    "development",
+                    "education",
+                  ] as const
+                ).map((section) => (
+                  <button
+                    key={section}
+                    onClick={() => setActiveSection(section)}
+                    className="aspect-square relative group overflow-hidden"
+                  >
+                    <Image
+                      src={serviceImages[section]}
+                      alt={section}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-all duration-300"></div>
+                    <div className="absolute bottom-4 left-4 text-white text-sm font-medium uppercase tracking-wide">
+                      {section === "ourlabs" ? "OUR LABS" : section}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </main>
+
+      <PageFooter />
     </div>
-  </main>
-
-  <PageFooter />
-</div>
-
   );
 }
