@@ -121,7 +121,7 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="aspect-square relative">
             <Image
-              src="/images/3.png"
+              src="/images/6.png"
               alt="Development"
               fill
               className="object-cover"
@@ -170,7 +170,7 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="aspect-square relative">
             <Image
-              src="/images/3.png"
+              src="/images/6.png"
               alt="Education"
               fill
               className="object-cover"
@@ -329,7 +329,7 @@ export default function ServicesPage() {
   const serviceImages = {
     production: "/images/1.png",
     swatches: "/images/3.png",
-    development: "/images/3.png",
+    development: "/images/6.png",
     education: "/images/4.png",
   };
   return (
