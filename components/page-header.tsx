@@ -7,7 +7,7 @@ interface PageHeaderProps {
 }
 
 export default function PageHeader({ title }: PageHeaderProps) {
-  const isAbout = title.toUpperCase() === "ABOUT"
+  const isAbout = title?.toUpperCase() === "ABOUT"
 
   return (
     <header className="py-6">

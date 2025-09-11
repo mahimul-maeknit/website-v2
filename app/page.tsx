@@ -39,7 +39,7 @@ export default function Page() {
                 <Link href="/services">Services</Link>
               </li>
               <li>
-                <Link href="/services#education">Onboarding</Link>
+                <Link href="/onboarding">Onboarding</Link>
               </li>
               <li>
                 <Link href="/work">Our Work</Link>
