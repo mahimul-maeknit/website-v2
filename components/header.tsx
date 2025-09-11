@@ -1,71 +1,31 @@
-"use client"
+'use client'
+
+import Image from "next/image"
 import Link from "next/link"
-import { Linkedin, Phone, Instagram, Mail, MapPin } from "lucide-react"
 
-interface PageHeaderProps {
-  title: string
-}
-
-export default function Header({ title }: PageHeaderProps) {
+export default function Header() {
   return (
-    <header className="py-6">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between">
-          {/* Left title */}
-          <h1 className="text-lg font-semibold tracking-wider uppercase">
-            {title}
-          </h1>
+    <header className="site-header" role="banner" aria-label="Top">
+      
+      <div className="container header-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '100px' }}>
+        <Link href="/" className="brand" aria-label="MAEKNIT Home">
+        <Image
+          src="/brand/maeknit_font.png"
+          alt="MAEKNIT"
+          width={200} /* bigger text */
+          height={200}  /* let width control scaling */
+          priority
+          style={{
+            height: 'auto',
+            display: 'block',
+          }}
+          className="brand-logo"
+        />
 
-          {/* Right icons */}
-          <ul className="flex items-center gap-2">
-            <li className="border border-black p-1">
-              <Link href="/" aria-label="Website">
-                <MapPin size={14} />
-              </Link>
-            </li>
-            <li className="border border-black p-1">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={14} />
-              </a>
-            </li>
-            <li className="border border-black p-1">
-              <a href="tel:+10000000000" aria-label="Phone">
-                <Phone size={14} />
-              </a>
-            </li>
-            <li className="border border-black p-1">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-              >
-                <Instagram size={14} />
-              </a>
-            </li>
-            <li className="border border-black p-1">
-              <a href="mailto:hello@maeknit.example" aria-label="Email">
-                <Mail size={14} />
-              </a>
-            </li>
-            <li className="border border-black p-1">
-              <Link href="/labs" aria-label="Location">
-                <MapPin size={14} />
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Underline */}
-        <div className="mt-2">
-          <hr className="border-t border-black" />
-        </div>
+        </Link>
+        <div className="tagline subheading caps">Knitwear Development Lab</div>
       </div>
+      <div className="rule" aria-hidden="true"></div>
     </header>
   )
 }
