@@ -3,12 +3,11 @@ import PageHeader from "@/components/page-header"
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen bg-white">
       <PageHeader title="ABOUT" />
 
-      <main className="min-h-screen bg-white">
+      <main className="flex-grow">
         <div className="max-w-7xl mx-auto px-6 py-4">
-
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             {/* Left Column - Text Content */}
@@ -58,10 +57,18 @@ export default function AboutPage() {
             {/* Right Column - Images */}
             <div className="space-y-4">
               <div className="h-[320px] overflow-hidden">
-                <img src="/images/ab1.png" alt="Knit fabric texture detail" className="w-full h-full object-cover" />
+                <img
+                  src="/images/ab1.png"
+                  alt="Knit fabric texture detail"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="h-[320px] overflow-hidden">
-                <img src="/images/ab2.png" alt="Textile material close-up" className="w-full h-full object-cover" />
+                <img
+                  src="/images/ab2.png"
+                  alt="Textile material close-up"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -77,7 +84,8 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
+
       <PageFooter />
-    </>
+    </div>
   )
 }

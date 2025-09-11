@@ -280,95 +280,79 @@ export default function ServicesPage() {
   };
 
   return (
-    <>
-      <PageHeader title="SERVICES" />
+    
+    <div className="flex flex-col min-h-screen">
+  <PageHeader title="SERVICES" />
 
-      <div>
-        <div className="max-w-7xl mx-auto px-6">
-          <nav className="flex justify-between items-center py-4">
-            <div className="flex space-x-8">
-              {(
-                [
-                  "production",
-                  "swatches",
-                  "development",
-                  "education",
-                  "ourlabs",
-                ] as const
-              ).map((section) => (
+  <main className="flex-grow">
+    <div className="max-w-7xl mx-auto px-6">
+      <nav className="flex justify-between items-center py-4">
+        <div className="flex space-x-8">
+          {(["production", "swatches", "development", "education", "ourlabs"] as const).map(
+            (section) => (
+              <button
+                key={section}
+                onClick={() => setActiveSection(section)}
+                className={`text-sm font-medium uppercase tracking-wide hover:opacity-70 transition-opacity ${
+                  activeSection === section ? "border-b-2 border-black pb-1" : ""
+                }`}
+              >
+                {section === "ourlabs" ? "OUR LABS" : section}
+              </button>
+            )
+          )}
+        </div>
+      </nav>
+      <hr className="border-t-2 border-black" />
+    </div>
+
+    <div className="max-w-7xl mx-auto px-6 py-12">
+      {activeSection ? (
+        <div className="space-y-8">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold tracking-wide">
+              {serviceContent[activeSection].title}
+            </h1>
+            <div className="w-full h-px bg-black mt-4 mb-8"></div>
+          </div>
+          {serviceContent[activeSection].content}
+        </div>
+      ) : (
+        <div className="space-y-8">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold tracking-wide mb-4">SERVICES</h1>
+            <div className="w-full h-px bg-black mb-8"></div>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {(["production", "swatches", "development", "education"] as const).map(
+              (section) => (
                 <button
                   key={section}
                   onClick={() => setActiveSection(section)}
-                  className={`text-sm font-medium uppercase tracking-wide hover:opacity-70 transition-opacity ${
-                    activeSection === section
-                      ? "border-b-2 border-black pb-1"
-                      : ""
-                  }`}
+                  className="aspect-square relative group overflow-hidden"
                 >
-                  {section === "ourlabs" ? "OUR LABS" : section}
+                  <Image
+                    src="/images/ab1.jpg"
+                    alt={section}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium uppercase tracking-wide">
+                    {section === "ourlabs" ? "OUR LABS" : section}
+                  </div>
                 </button>
-              ))}
-            </div>
-          </nav>
-          <hr className="border-t-2 border-black" />
-
+              )
+            )}
+          </div>
         </div>
-      </div>
+      )}
+    </div>
+  </main>
 
-      <main className="min-h-screen">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          {activeSection ? (
-            <div className="space-y-8">
-              <div className="text-center">
-                <h1 className="text-2xl font-bold tracking-wide">
-                  {serviceContent[activeSection].title}
-                </h1>
-                <div className="w-full h-px bg-black mt-4 mb-8"></div>
-              </div>
-              {serviceContent[activeSection].content}
-            </div>
-          ) : (
-            <div className="space-y-8">
-              <div className="text-center">
-                <h1 className="text-2xl font-bold tracking-wide mb-4">
-                  SERVICES
-                </h1>
-                <div className="w-full h-px bg-black mb-8"></div>
-              </div>
+  <PageFooter />
+</div>
 
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                {(
-                  [
-                    "production",
-                    "swatches",
-                    "development",
-                    "education",
-                  ] as const
-                ).map((section, index) => (
-                  <button
-                    key={section}
-                    onClick={() => setActiveSection(section)}
-                    className="aspect-square relative group overflow-hidden"
-                  >
-                    <Image
-                      src="/images/ab1.jpg"
-                      alt={section}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
-                    <div className="absolute bottom-4 left-4 text-white text-sm font-medium uppercase tracking-wide">
-                      {section === "ourlabs" ? "OUR LABS" : section}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </main>
-
-      <PageFooter />
-    </>
   );
 }
