@@ -10,7 +10,16 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Base Next.js configs
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // Your overrides
+  {
+    rules: {
+      "@next/next/no-img-element": "off", // disable <img> warnings
+      "@typescript-eslint/no-unused-vars": "warn", // show as warning, not error
+    },
+  },
 ];
 
 export default eslintConfig;

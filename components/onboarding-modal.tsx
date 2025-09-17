@@ -1,12 +1,28 @@
 "use client"
 
 import { useState, useRef, useEffect, useCallback } from "react"
-import OnboardingForm from "./OnboardingForm"
+import OnboardingForm from "./onboarding-form"
 import "../styles/onboarding-modal.css"
 
-const OnboardingModal = ({ isOpen, compact = false, onClose, userCity, userCountry, userCountryCode }) => {
+type OnboardingModalProps = {
+  isOpen: boolean
+  compact?: boolean
+  onClose: () => void
+  userCity?: string
+  userCountry?: string
+  userCountryCode?: string
+}
+
+const OnboardingModal = ({
+  isOpen,
+  compact = false,
+  onClose,
+  userCity = "",
+  userCountry = "",
+  userCountryCode = "",
+}: OnboardingModalProps) => {
   const [isClosing, setIsClosing] = useState(false)
-  const modalRef = useRef(null)
+  const modalRef = useRef<HTMLDivElement | null>(null)
 
   const handleClose = useCallback(() => {
     setIsClosing(true)
@@ -18,8 +34,8 @@ const OnboardingModal = ({ isOpen, compact = false, onClose, userCity, userCount
 
   // Close when clicking outside the modal
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
         handleClose()
       }
     }
@@ -27,15 +43,14 @@ const OnboardingModal = ({ isOpen, compact = false, onClose, userCity, userCount
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside)
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
-  }, [isOpen, onClose])
+  }, [isOpen, handleClose])
 
   // Handle escape key
   useEffect(() => {
-    const handleEscKey = (event) => {
+    const handleEscKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         handleClose()
       }
@@ -44,21 +59,43 @@ const OnboardingModal = ({ isOpen, compact = false, onClose, userCity, userCount
     if (isOpen) {
       document.addEventListener("keydown", handleEscKey)
     }
-
     return () => {
       document.removeEventListener("keydown", handleEscKey)
     }
-  }, [isOpen, onClose])
+  }, [isOpen, handleClose])
 
   if (!isOpen && !isClosing) return null
 
   return (
     <div className="chat-popup-container">
       <div ref={modalRef} className={`chat-popup ${isClosing ? "closing" : ""}`}>
-        <button className="chat-close-button" onClick={handleClose} aria-label="Close">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M1 1L13 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <button
+          className="chat-close-button"
+          onClick={handleClose}
+          aria-label="Close"
+          type="button"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 1L1 13"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M1 1L13 13"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
         <OnboardingForm

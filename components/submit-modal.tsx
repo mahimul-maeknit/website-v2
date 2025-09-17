@@ -1,18 +1,25 @@
 "use client"
 
-// components/SubmitModal.js
 import { useState } from "react"
 import "../styles/submitmodal.css"
 
-const SubmitModal = ({ isOpen, onClose, onSubmit, isLoading }) => {
+type SubmitModalProps = {
+  isOpen: boolean
+  onClose: () => void
+  onSubmit: (form: { name: string; email: string; message: string }) => void
+  isLoading: boolean
+}
+
+const SubmitModal = ({ isOpen, onClose, onSubmit, isLoading }: SubmitModalProps) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   })
 
-  const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setForm((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = () => {
@@ -29,12 +36,34 @@ const SubmitModal = ({ isOpen, onClose, onSubmit, isLoading }) => {
     <div className="modal-backdrop">
       <div className="modal-box">
         <h2>Submit Your Design</h2>
-        <input type="text" name="name" placeholder="Your name" value={form.name} onChange={handleChange} />
-        <input type="email" name="email" placeholder="Your email" value={form.email} onChange={handleChange} />
-        <textarea name="message" placeholder="Message or notes" value={form.message} onChange={handleChange} />
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Message or notes"
+          value={form.message}
+          onChange={handleChange}
+          required
+        />
         <div className="modal-actions">
-          <button onClick={onClose}>Cancel</button>
-          <button onClick={handleSubmit} disabled={isLoading}>
+          <button type="button" onClick={onClose}>
+            Cancel
+          </button>
+          <button type="button" onClick={handleSubmit} disabled={isLoading}>
             {isLoading ? "Sending..." : "Submit"}
           </button>
         </div>

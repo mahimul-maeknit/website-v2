@@ -1,10 +1,22 @@
 "use client"
 
-const Toast = ({ message, type = "success", onClose }) => {
+type ToastProps = {
+  message: string
+  type?: "success" | "error"
+  onClose: () => void
+}
+
+const Toast = ({ message, type = "success", onClose }: ToastProps) => {
   return (
     <div className={`toast ${type}`}>
       <span>{message}</span>
-      <button onClick={onClose}>✖</button>
+      <button
+        type="button"
+        aria-label="Close toast"
+        onClick={onClose}
+      >
+        ✖
+      </button>
     </div>
   )
 }

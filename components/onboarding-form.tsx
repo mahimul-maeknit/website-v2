@@ -7,19 +7,41 @@ import "../styles/onboarding-form.css"
 const interestOptions = ["Rapid Prototyping", "Production", "Swatching"]
 const identityOptions = ["Brand", "Designer", "Buyer", "Factory", "Student"]
 
-const OnboardingForm = ({ compact = false, userCity = "", userCountry = "", userCountryCode = "" }) => {
-  const [form, setForm] = useState({
+type ToastMessage = {
+  message: string
+  type: "success" | "error"
+} | null
+
+type FormState = {
+  name: string
+  interests: string[]
+  identity: string
+  email: string
+  message: string
+  userCity: string
+  userCountry: string
+  userCountryCode: string
+}
+
+const OnboardingForm = ({
+  compact = false,
+  userCity = "",
+  userCountry = "",
+  userCountryCode = "",
+}) => {
+  const [form, setForm] = useState<FormState>({
     name: "",
     interests: [],
     identity: "",
     email: "",
     message: "",
-    userCity: "",
-    userCountry: "",
-    userCountryCode: "",
+    userCity,
+    userCountry,
+    userCountryCode,
   })
   const [loading, setLoading] = useState(false)
-  const [toast, setToast] = useState(null)
+  const [toast, setToast] = useState<ToastMessage>(null)
+
   // Sync location props to form state
   useEffect(() => {
     if (userCity || userCountry || userCountryCode) {
@@ -32,24 +54,28 @@ const OnboardingForm = ({ compact = false, userCity = "", userCountry = "", user
     }
   }, [userCity, userCountry, userCountryCode])
 
-  const handleCheckboxChanges = (group, value) => {
+  const handleCheckboxChanges = (group: "interests", value: string) => {
     setForm((prev) => {
       const current = prev[group]
-      const updated = current.includes(value) ? current.filter((item) => item !== value) : [...current, value]
+      const updated = current.includes(value)
+        ? current.filter((item) => item !== value)
+        : [...current, value]
       return { ...prev, [group]: updated }
     })
   }
 
-  const handleRadioChange = (field, value) => {
+  const handleRadioChange = (field: "identity", value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }))
   }
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target
     setForm((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
     setToast(null)
@@ -63,7 +89,7 @@ const OnboardingForm = ({ compact = false, userCity = "", userCountry = "", user
 
       if (!res.ok) throw new Error("Failed to submit form")
 
-      setToast({ message: "Thanks! We&apos;ll be in touch shortly.", type: "success" })
+      setToast({ message: "Thanks! We'll be in touch shortly.", type: "success" })
 
       setForm((prev) => ({
         name: "",
@@ -77,7 +103,10 @@ const OnboardingForm = ({ compact = false, userCity = "", userCountry = "", user
       }))
     } catch (err) {
       console.error(err)
-      setToast({ message: "Submission failed. Please try again.", type: "error" })
+      setToast({
+        message: "Submission failed. Please try again.",
+        type: "error",
+      })
     } finally {
       setLoading(false)
     }
@@ -92,8 +121,17 @@ const OnboardingForm = ({ compact = false, userCity = "", userCountry = "", user
 
   return (
     <>
-      {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
-      <form className={`onboarding-form ${compact ? "chat-mode" : ""}`} onSubmit={handleSubmit}>
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
+      <form
+        className={`onboarding-form ${compact ? "chat-mode" : ""}`}
+        onSubmit={handleSubmit}
+      >
         <h2>Get Started with Maeknit</h2>
 
         <label>I am most interested in:</label>
@@ -127,13 +165,30 @@ const OnboardingForm = ({ compact = false, userCity = "", userCountry = "", user
         </div>
 
         <label>Name:</label>
-        <input type="text" name="name" value={form.name} onChange={handleChange} required />
+        <input
+          type="text"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
 
         <label>Email:</label>
-        <input type="email" name="email" value={form.email} onChange={handleChange} required />
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
 
         <label>Tell us more about yourself:</label>
-        <textarea name="message" value={form.message} onChange={handleChange} rows={compact ? 3 : 5} />
+        <textarea
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          rows={compact ? 3 : 5}
+        />
 
         <button type="submit" disabled={loading}>
           {loading ? "Submitting..." : "Submit"}
