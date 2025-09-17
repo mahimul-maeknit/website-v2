@@ -1,3 +1,4 @@
+/*** 
 import sendgrid from "@sendgrid/mail"
 import { createOdooLead } from "../lib/odooClient.js"
 import { getConfig } from "../lib/config.js"
@@ -74,3 +75,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Submission failed." })
   }
 }
+***/
