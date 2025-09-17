@@ -1,4 +1,4 @@
-&apos;use client&apos;
+'use client'
 
 import Image from "next/image"
 import Link from "next/link"
@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="site-header" role="banner" aria-label="Top">
       
-      <div className="container header-inner" style={{ display: &apos;flex&apos;, alignItems: &apos;center&apos;, justifyContent: &apos;space-between&apos;, marginTop: &apos;100px&apos; }}>
+      <div className="container header-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '100px' }}>
         <Link href="/" className="brand" aria-label="MAEKNIT Home">
         <Image
           src="/brand/maeknit_font.png"
@@ -16,8 +16,8 @@ export default function Header() {
           height={200}  /* let width control scaling */
           priority
           style={{
-            height: &apos;auto&apos;,
-            display: &apos;block&apos;,
+            height: 'auto',
+            display: 'block',
           }}
           className="brand-logo"
         />
