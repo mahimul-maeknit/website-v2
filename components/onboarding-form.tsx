@@ -63,7 +63,7 @@ const OnboardingForm = ({ compact = false, userCity = "", userCountry = "", user
 
       if (!res.ok) throw new Error("Failed to submit form")
 
-      setToast({ message: "Thanks! We'll be in touch shortly.", type: "success" })
+      setToast({ message: "Thanks! We&apos;ll be in touch shortly.", type: "success" })
 
       setForm((prev) => ({
         name: "",

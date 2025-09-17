@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   const confirmationHTML = `
     <div style="font-family: Arial; font-size: 16px;">
       <h2>Thank you for reaching out to Maeknit!</h2>
-      <p>We've received your submission.</p>
+      <p>We&apos;ve received your submission.</p>
       <p><strong>Name:</strong> ${name || "N/A"}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Interests:</strong> ${interests.join(", ") || "N/A"}</p>
@@ -52,7 +52,7 @@ export default async function handler(req, res) {
     await sendgrid.send({
       to: email,
       from: "Maeknit INC <intel@maeknit.io>",
-      subject: "We've received your onboarding form!",
+      subject: "We&apos;ve received your onboarding form!",
       html: confirmationHTML,
     })
 

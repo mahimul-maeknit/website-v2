@@ -55,7 +55,7 @@ function getCountryId(models, db, uid, password, countryCode) {
         password,
         "res.country",
         "search_read",
-        [[["code", "=", countryCode]]], // or use "name" if you're passing full country names
+        [[["code", "=", countryCode]]], // or use "name" if you&apos;re passing full country names
         { fields: ["id"], limit: 1 },
       ],
       (err, result) => {

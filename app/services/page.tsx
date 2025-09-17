@@ -56,13 +56,13 @@ export default function ServicesPage() {
             </p>
 
             <p className="text-sm">
-              Whether you're developing a single standout piece or scaling a
+              Whether you&apos;re developing a single standout piece or scaling a
               full collection, we adapt to your needs — with the same standard
               of excellence at every level.
             </p>
 
             <p className="text-sm">
-              The future of knitwear is responsive. We're built to move with
+              The future of knitwear is responsive. We&apos;re built to move with
               you. From one piece to thousands,{" "}
               <span className="font-bold">without compromise</span>
             </p>
@@ -153,7 +153,7 @@ export default function ServicesPage() {
               from anywhere in the world.
             </p>
             <p className="text-sm">
-              Whether you're refining a signature silhouette or building
+              Whether you&apos;re refining a signature silhouette or building
               something entirely new, we meet you where you are — and move with
               you, every step of the way.
             </p>
@@ -188,7 +188,7 @@ export default function ServicesPage() {
               in-house instruction led by seasoned industry professionals.
             </p>
             <p className="text-sm">
-              At our New York and London labs, you'll gain real-world experience
+              At our New York and London labs, you&apos;ll gain real-world experience
               across every stage of the knitwear development process — no
               gatekeeping, no guesswork.
             </p>
@@ -203,7 +203,7 @@ export default function ServicesPage() {
               </ul>
             </div>
             <p className="text-sm">
-              Whether you're launching a brand or mastering the craft, we equip
+              Whether you&apos;re launching a brand or mastering the craft, we equip
               you with the tools, knowledge, and independence to create with
               confidence.
             </p>
