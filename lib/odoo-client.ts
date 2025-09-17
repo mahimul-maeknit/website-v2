@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import xmlrpc from "xmlrpc"
 import { getConfig } from "./config.js"
 
@@ -59,6 +60,7 @@ function getTagIds(
   })
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getCountryId(
   models: any,
   db: string,
