@@ -45,7 +45,6 @@ async function getTagIds(models, db, uid, password, interests) {
 }
 
 function getCountryId(models, db, uid, password, countryCode) {
-  console.log("🔍 Searching for country ID with country code", countryCode)
   return new Promise((resolve, reject) => {
     models.methodCall(
       "execute_kw",
@@ -55,20 +54,25 @@ function getCountryId(models, db, uid, password, countryCode) {
         password,
         "res.country",
         "search_read",
-        [[["code", "=", countryCode]]], // or use "name" if you&apos;re passing full country names
+        [[["code", "=", countryCode]]],
         { fields: ["id"], limit: 1 },
       ],
       (err, result) => {
-        if (err || !result.length) {
-          console.error("❌ Failed to find country:", err || "Not found")
-          return resolve(null) // optional: pass null to skip it
+        if (err) {
+          console.error("❌ Failed to find country:", err)
+          return reject(err)
         }
-
+        if (!result.length) {
+          console.warn("⚠️ No country found for code:", countryCode)
+          return resolve(null)
+        }
         resolve(result[0].id)
       },
     )
   })
 }
+
+
 
 /**
  * @param {Object} leadData

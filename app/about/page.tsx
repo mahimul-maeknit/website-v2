@@ -1,5 +1,6 @@
 import PageFooter from "@/components/page-footer"
 import PageHeader from "@/components/page-header"
+import Image from "next/image"
 
 export default function AboutPage() {
   return (
@@ -57,17 +58,21 @@ export default function AboutPage() {
             {/* Right Column - Images */}
             <div className="space-y-4">
               <div className="h-[320px] overflow-hidden">
-                <img
+                <Image
                   src="/images/ab1.png"
                   alt="Knit fabric texture detail"
                   className="w-full h-full object-cover"
+                  width={800}   
+                  height={320}                 
                 />
               </div>
               <div className="h-[320px] overflow-hidden">
-                <img
+                <Image
                   src="/images/ab2.png"
                   alt="Textile material close-up"
                   className="w-full h-full object-cover"
+                  width={800}   
+                  height={320}  
                 />
               </div>
             </div>
