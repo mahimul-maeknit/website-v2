@@ -12,17 +12,18 @@ export default function Page() {
 
       {/* HERO FRAME (carousel placeholder) */}
       <section className="hero-frame" aria-label="Featured">
-        <div className="rule"></div> {/* Top rule */}
-        <div className="container">
-          <Image
-            src="/images/carousel.png"
-            alt="MAEKNIT carousel image"
-            width={1200}
-            height={520}
-            priority
-            className="carousel-image"
-          />
-        </div>
+      <div className="rule"></div> {/* Top rule */}
+      <div className="container">
+        <video
+          src="/videos/abc.mp4"
+          width={1200}
+          height={520}
+          className="carousel-video"
+          autoPlay
+          muted
+          playsInline
+        />
+      </div>
         <div className="rule"></div> {/* Bottom rule */}
       </section>
 
