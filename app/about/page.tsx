@@ -35,13 +35,13 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   <p className="text-base leading-relaxed">
                     With laboratories in <strong>New York</strong> and <strong>London</strong> and a global production
-                    network, we bring technical excellence back to the center of fashion. We don't just accelerate
+                    network, we bring technical excellence back to the center of fashion. We don&apos;t just accelerate
                     timelines — we <span className="underline">redesign</span> the system. Transparent, responsive, and
                     built to match the rhythm of modern design.
                   </p>
 
                   <p className="text-base leading-relaxed">
-                    We collaborate with brands, retailers and emerging designers to bring ideas to life — whether it's a
+                    We collaborate with brands, retailers and emerging designers to bring ideas to life — whether it&apos;s a
                     single sample or a full collection. Every piece we produce reflects discipline, care, and a lifetime
                     of experience.
                   </p>
