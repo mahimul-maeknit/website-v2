@@ -332,6 +332,7 @@ export default function ServicesPage() {
     development: "/images/6.png",
     education: "/images/4.png",
   };
+
   return (
     <div className="flex flex-col min-h-screen">
       <PageHeader title="SERVICES" />
@@ -402,7 +403,7 @@ export default function ServicesPage() {
                     />
                     <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-all duration-300"></div>
                     <div className="absolute bottom-4 left-4 text-white text-sm font-medium uppercase tracking-wide">
-                      {section === "ourlabs" ? "OUR LABS" : section}
+                      {section}
                     </div>
                   </button>
                 ))}
