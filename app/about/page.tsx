@@ -4,7 +4,6 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import SiteLayout from "@/components/site-layout";
 import { ChevronRight } from "lucide-react";
-import { ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function AboutPage() {
@@ -38,7 +37,7 @@ export default function AboutPage() {
     <SiteLayout>
       {/* Main Content Area - replaces carousel */}
       <section className="about-content-frame" aria-label="About">
-        <div className="about-layout">
+        <div className={`about-layout ${isAtEnd ? "full" : ""}`}>
           {/* Left Static Panel */}
           {!isAtEnd ? (
             <>
@@ -272,9 +271,9 @@ export default function AboutPage() {
                     className="scroll-indicator"
                     aria-label="Scroll to next section"
                   >
-                    <ChevronLeft size={32} />
-                    <ChevronLeft size={32} className="-ml-4" />
-                    <ChevronLeft size={32} className="-ml-4" />
+                    <ChevronRight size={32} />
+                    <ChevronRight size={32} className="-ml-4" />
+                    <ChevronRight size={32} className="-ml-4" />
                   </button>
                 </div>
                 <div className="static-panel-image">

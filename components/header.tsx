@@ -24,7 +24,7 @@ export default function Header() {
               lineHeight: 1,
             }}
           >
-            MAEKNIT
+            maeknit
           </span>
         </Link>
 

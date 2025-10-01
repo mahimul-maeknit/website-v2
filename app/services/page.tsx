@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import SiteLayout from "@/components/site-layout";
-import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import Link from "next/link";
 
 export default function ServicesPage() {
@@ -64,7 +64,7 @@ export default function ServicesPage() {
     {
       id: "production",
       title: "PRODUCTION",
-      image: "/images/1.png",
+      image: "/images/latest/about_us_left_1.jpg",
     },
     {
       id: "our-labs",
@@ -120,9 +120,9 @@ export default function ServicesPage() {
                       className="scroll-indicator"
                       aria-label="Scroll to previous services"
                     >
-                      <ChevronLeft size={32} />
-                      <ChevronLeft size={32} className="-ml-4" />
-                      <ChevronLeft size={32} className="-ml-4" />
+                      <ChevronRight size={32} />
+                      <ChevronRight size={32} className="-ml-4" />
+                      <ChevronRight size={32} className="-ml-4" />
                     </button>
                   )}
                 </div>

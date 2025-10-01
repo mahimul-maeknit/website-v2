@@ -42,7 +42,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
             </ul>
           </nav>
           <div className="brand-logo">
-            <Image src="/brand/round_logo.png" alt="MAEKNIT round logo" width={100} height={100} />
+            <Image src="/brand/round_logo.png" alt="MAEKNIT round logo" width={30} height={100} />
           </div>
         </div>
 

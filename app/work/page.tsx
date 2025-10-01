@@ -117,8 +117,8 @@ export default function WorkPage() {
                       <Image
                         src="/brand/round_logo.png"
                         alt="MAEKNIT round logo"
-                        width={24}
-                        height={24}
+                        width={12}
+                        height={12}
                         className="w-full h-full object-contain"
                       />
                     </div>

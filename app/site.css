@@ -240,6 +240,28 @@ p {
   background: var(--muted-bg);
   min-height: clamp(220px, 38vw, 520px); /* Match carousel height */
 }
+.collaborate-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  height: 100%; /* make it same height as image boxes */
+}
+
+.collaborate-options p {
+  margin: 12px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+.collaborate-options strong {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
 
 .about-layout {
   display: grid;
@@ -249,6 +271,10 @@ p {
   margin: 0 auto;
   align-items: stretch;
   height: clamp(220px, 38vw, 520px);
+}
+
+.about-layout.full {
+  grid-template-columns: 1fr; 
 }
 
 .swatching-layout {
@@ -404,12 +430,12 @@ p {
 .bottom-brand .brand-inner {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;
+  justify-content: flex-start; /* align to left */
   padding: 0px var(--gutter);
 }
 .brand-nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* align to left */
   gap: clamp(22px, 8vw, 120px);
   list-style: none;
   margin: 0;

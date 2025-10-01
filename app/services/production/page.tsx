@@ -6,23 +6,23 @@ import SiteLayout from "@/components/site-layout";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-export default function SwatchingPage() {
+export default function DevelopmentPage() {
   const [showExploreGrid, setShowExploreGrid] = useState(false);
 
   return (
     <SiteLayout>
-      <section className="about-content-frame" aria-label="Swatching">
-      <div className={`swatching-layout ${showExploreGrid ? "full" : ""}`}>
-      {!showExploreGrid ? (
+      <section className="about-content-frame" aria-label="Production">
+        <div className={`swatching-layout ${showExploreGrid ? "full" : ""}`}>
+          {!showExploreGrid ? (
             <>
               {/* Left static panel */}
               <div className="about-static-panel">
                 <div className="static-panel-inner">
-                  <h2 className="static-panel-title">SWATCHING</h2>
+                  <h2 className="static-panel-title">Production</h2>
                   <div className="static-panel-image">
                     <Image
-                      src="/images/latest/swatching.jpg"
-                      alt="Swatching fabric samples"
+                      src="/images/latest/about_us_left_1.jpg"
+                      alt="Production"
                       fill
                       className="object-cover"
                     />
@@ -35,7 +35,7 @@ export default function SwatchingPage() {
                 <div className="about-scroll-panel">
                   <div className="scroll-panel-header">
                     <h2 className="scroll-panel-title">
-                      YOUR VISION, OUR YARN LIBRARY
+                    BUILT TO SCALE WITH YOU
                     </h2>
                     {/* Always show chevron */}
                     <button
@@ -51,24 +51,18 @@ export default function SwatchingPage() {
                   <div className="scroll-panel-content no-image">
                     <div className="scroll-panel-text">
                       <p>
-                        Swatches delivered in <strong>1-2 weeks</strong>, knit
-                        on industry-standard machinery and tailored to your
-                        aesthetic.
+                      From  <strong>rapid development</strong> in our NYC and London labs—designed for speed, flexibility, and hands-on collaboration—to 
+                      <strong>small-batch domestic runs</strong> for boutiques and test markets, we adapt to your needs. 
                       </p>
                       <p>
-                        <strong>Our in-house yarn library</strong> and global
-                        mill partnerships provide specialty materials curated
-                        for quality, provenance, and performance.
+                      Our vetted global network spans the USA, UK, Peru, Turkey, Romania, Bulgaria, Spain, Bangladesh, Canada, Madagascar, and beyond, 
+                      delivering the same uncompromising standard from <strong>prototype to full production.</strong>
+
                       </p>
+
                       <p>
-                        <strong>Track progress</strong> in real time on our
-                        collaborative digital whiteboard, and skip the
-                        guesswork—we turn your sketches into production-ready
-                        knitwear.
-                      </p>
-                      <p>
-                        <strong>Limitless experimentation</strong>, fast
-                        turnaround, and what you sample is what you get.
+                      With <strong>no minimums,</strong> transparent pricing, and fast quoting for production-ready designs, 
+                      <strong>scaling has never been simpler.</strong>
                       </p>
                     </div>
                   </div>
@@ -80,12 +74,12 @@ export default function SwatchingPage() {
               {/* Box 1 */}
               <div className="explore-box">
                 <div className="scroll-panel-header">
-                  <h2 className="scroll-panel-title">ORDER SWATCHES</h2>
+                  <h2 className="scroll-panel-title">PRODUCTION</h2>
                 </div>
                 <Link href="/onboarding" className="static-panel-image">
                   <Image
-                    src="/images/latest/swatching.jpg"
-                    alt="Order Swatches"
+                    src="/images/latest/about_us_left_1.jpg"
+                    alt="Production"
                     fill
                     className="object-cover"
                   />
@@ -110,7 +104,7 @@ export default function SwatchingPage() {
               {/* Box 3 */}
               <div className="explore-box">
                 <div className="scroll-panel-header">
-                  <h2 className="scroll-panel-title">READY TO SCALE?</h2>
+                  <h2 className="scroll-panel-title">Order Swatches</h2>
                   <button
                     onClick={() => setShowExploreGrid(false)}
                     className="scroll-indicator"
@@ -121,10 +115,13 @@ export default function SwatchingPage() {
                     <ChevronRight size={32} className="-ml-4" />
                   </button>
                 </div>
-                <Link href="/services/production" className="static-panel-image">
+                <Link
+                  href="/services/production"
+                  className="static-panel-image"
+                >
                   <Image
-                    src="/images/latest/about_us_left_1.jpg"
-                    alt="Ready to Scale"
+                    src="/images/latest/order_swatches.png"
+                    alt="Order Swatches"
                     fill
                     className="object-cover"
                   />

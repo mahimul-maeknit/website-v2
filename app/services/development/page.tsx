@@ -6,22 +6,22 @@ import SiteLayout from "@/components/site-layout";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-export default function SwatchingPage() {
+export default function DevelopmentPage() {
   const [showExploreGrid, setShowExploreGrid] = useState(false);
 
   return (
     <SiteLayout>
-      <section className="about-content-frame" aria-label="Swatching">
-      <div className={`swatching-layout ${showExploreGrid ? "full" : ""}`}>
-      {!showExploreGrid ? (
+      <section className="about-content-frame" aria-label="Development">
+        <div className={`swatching-layout ${showExploreGrid ? "full" : ""}`}>
+          {!showExploreGrid ? (
             <>
               {/* Left static panel */}
               <div className="about-static-panel">
                 <div className="static-panel-inner">
-                  <h2 className="static-panel-title">SWATCHING</h2>
+                  <h2 className="static-panel-title">Development</h2>
                   <div className="static-panel-image">
                     <Image
-                      src="/images/latest/swatching.jpg"
+                      src="/images/latest/development.jpg"
                       alt="Swatching fabric samples"
                       fill
                       className="object-cover"
@@ -35,7 +35,7 @@ export default function SwatchingPage() {
                 <div className="about-scroll-panel">
                   <div className="scroll-panel-header">
                     <h2 className="scroll-panel-title">
-                      YOUR VISION, OUR YARN LIBRARY
+                      FROM CONCEPT TO COTUORE
                     </h2>
                     {/* Always show chevron */}
                     <button
@@ -51,24 +51,26 @@ export default function SwatchingPage() {
                   <div className="scroll-panel-content no-image">
                     <div className="scroll-panel-text">
                       <p>
-                        Swatches delivered in <strong>1-2 weeks</strong>, knit
-                        on industry-standard machinery and tailored to your
-                        aesthetic.
+                        <strong>Skip the guesswork. </strong>
+                        We turn your sketches into production-ready knitwear
+                        using advanced 3D tools, virtual mannequins, and
+                        real-time simulation.
                       </p>
                       <p>
-                        <strong>Our in-house yarn library</strong> and global
-                        mill partnerships provide specialty materials curated
-                        for quality, provenance, and performance.
+                        <strong>FOR BRANDS </strong> <br></br>
+                        Streamlined process from concept to market-ready samples
                       </p>
+
                       <p>
-                        <strong>Track progress</strong> in real time on our
-                        collaborative digital whiteboard, and skip the
-                        guesswork—we turn your sketches into production-ready
-                        knitwear.
+                        <strong>FOR TECHNICAL TEAMS</strong> <br></br>
+                        Full access to CAD programming, linking expertise, and
+                        3D advanced modeling
                       </p>
+
                       <p>
-                        <strong>Limitless experimentation</strong>, fast
-                        turnaround, and what you sample is what you get.
+                        Whether you’re refining a signature silhouette or
+                        building something entirely new, we meet you where you
+                        are and move at your pace.
                       </p>
                     </div>
                   </div>
@@ -80,16 +82,25 @@ export default function SwatchingPage() {
               {/* Box 1 */}
               <div className="explore-box">
                 <div className="scroll-panel-header">
-                  <h2 className="scroll-panel-title">ORDER SWATCHES</h2>
+                  <h2 className="scroll-panel-title">COLLABORATE</h2>
                 </div>
-                <Link href="/onboarding" className="static-panel-image">
-                  <Image
-                    src="/images/latest/swatching.jpg"
-                    alt="Order Swatches"
-                    fill
-                    className="object-cover"
-                  />
-                </Link>
+                <div className="collaborate-options">
+                  <p>
+                    <strong>IN-PERSON</strong>
+                    <br />
+                    AT OUR NYC OR LONDON LABS
+                  </p>
+                  <p>
+                    <strong>REMOTELY</strong>
+                    <br />
+                    FROM ANYWHERE <br /> IN THE WORLD
+                  </p>
+                  <p>
+                    <strong>HYBRID APPROACH</strong>
+                    <br />
+                    FOR MAXIMUM FLEXIBILITY
+                  </p>
+                </div>
               </div>
 
               {/* Box 2 */}
@@ -121,7 +132,10 @@ export default function SwatchingPage() {
                     <ChevronRight size={32} className="-ml-4" />
                   </button>
                 </div>
-                <Link href="/services/production" className="static-panel-image">
+                <Link
+                  href="/services/production"
+                  className="static-panel-image"
+                >
                   <Image
                     src="/images/latest/about_us_left_1.jpg"
                     alt="Ready to Scale"

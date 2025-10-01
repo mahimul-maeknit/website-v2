@@ -24,8 +24,8 @@ export default function Footer() {
             <Image
               src="/brand/round_logo.png"
               alt="MAEKNIT round logo"
-              width={60}
-              height={60}
+              width={12}
+              height={12}
               className="block"
             />
           </div>
