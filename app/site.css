@@ -243,12 +243,12 @@ p {
 
 .about-layout {
   display: grid;
-  grid-template-columns: 420px 1fr; /* Increased from 320px to 420px */
+  grid-template-columns: 420px 1fr;
   gap: 20px;
   max-width: var(--max-w);
   margin: 0 auto;
   align-items: stretch;
-  height: clamp(220px, 38vw, 520px); /* Match carousel height */
+  height: clamp(220px, 38vw, 520px);
 }
 
 .about-static-panel {
@@ -260,7 +260,7 @@ p {
 }
 
 .static-panel-inner {
-  padding: 24px;
+  padding: 0;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -278,12 +278,14 @@ p {
 
 .static-panel-image {
   position: relative;
-  flex: 1;
-  min-height: 0;
+  width: 100%;
+  height: 350px; /* Fixed height matching right side */
+  margin-top: 16px;
+  flex-shrink: 0;
 }
 
 .about-scroll-container {
-  border: 2px solid var(--border); /* its own box */
+  border: 2px solid var(--border);
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -301,12 +303,12 @@ p {
 }
 
 .about-scroll-container:active {
-  cursor: grabbing; /* Add visual feedback */
+  cursor: grabbing;
 }
 
 /* Keep scrollbar hidden but functional */
 .about-scroll-container::-webkit-scrollbar {
-  height: 8px; /* Make scrollbar functional but subtle */
+  height: 8px;
 }
 
 .about-scroll-container::-webkit-scrollbar-track {
@@ -326,7 +328,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 16px;
+  margin: 0 0 16px 0;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--border);
 }
@@ -349,7 +351,7 @@ p {
   color: var(--fg);
   padding: 0;
   transition: transform 0.2s;
-  opacity: 0.6; /* Make them more subtle */
+  opacity: 0.6;
 }
 
 .scroll-indicator:hover {
@@ -358,19 +360,21 @@ p {
 }
 .scroll-panel-content {
   display: flex;
-  align-items: center; /* vertically center image & text */
-  gap: 2rem; /* spacing between image and text */
+  align-items: flex-start; /* Align to top */
+  gap: 2rem;
 }
 
 .scroll-panel-image {
   position: relative;
-  width: 320px; /* Fixed width similar to left panel proportions */
-  height: 320px; /* Square aspect ratio */
-  flex-shrink: 0; /* Prevent shrinking */
+  width: 350px; /* Fixed width matching left side */
+  height: 350px; /* Fixed height matching left side */
+  flex-shrink: 0;
+  margin-top: 16px; /* Same margin as left side */
 }
 
 .scroll-panel-text {
-  flex: 1.5;
+  flex: 1;
+  padding-top: 16px; /* Align text with image top */
 }
 
 .scroll-panel-text p {
@@ -459,7 +463,7 @@ p {
   }
 
   .about-static-panel {
-    display: none; /* Hide on mobile for now */
+    display: none;
   }
 
   .scroll-panel-content {

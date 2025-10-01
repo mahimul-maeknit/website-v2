@@ -125,20 +125,51 @@ export default function AboutPage() {
               </div>
               <div className="scroll-panel-content">
                 <div className="scroll-panel-image">
-                  <Image src="/images/about-3.png" alt="Refined textile sample" fill className="object-cover" />
+                  <Image
+                    src="/images/latest/refinement.jpg"
+                    alt="Textile refinement"
+                    fill
+                    style={{ objectFit: "contain", backgroundColor: "#fff" }}
+                  />
                 </div>
                 <div className="scroll-panel-text">
                   <p>
-                    Perfect every detail with precision sampling and real-time iteration, refining designs quickly and
-                    confidently.
+                  Perfect every detail with precision sampling and real-time iteration, refining designs quickly and confidently. 
                   </p>
-                  <p>
-                    Industry-standard machinery ensures what you sample is exactly what goes into production, with no
-                    surprises when it matters most.
-                  </p>
+                  <p>Industry-standard machinery ensures what you sample is exactly what goes into production, with no surprises when it matters most.</p>
                 </div>
               </div>
             </div>
+
+            {/* Panel 4: RELIZATION */}
+            <div className="about-scroll-panel">
+              <div className="scroll-panel-header">
+                <h2 className="scroll-panel-title">REALIZATION</h2>
+                <button onClick={scrollToNext} className="scroll-indicator" aria-label="Scroll to next section">
+                  <ChevronRight size={32} />
+                  <ChevronRight size={32} className="-ml-4" />
+                  <ChevronRight size={32} className="-ml-4" />
+                </button>
+              </div>
+              <div className="scroll-panel-content">
+                <div className="scroll-panel-image">
+                  <Image
+                    src="/images/latest/realization.png"
+                    alt="Textile relization"
+                    fill
+                    style={{ objectFit: "contain", backgroundColor: "#fff" }}
+                  />
+                </div>
+                <div className="scroll-panel-text">
+                  <p>
+                  Scale seamlessly through our curated global network, handling everything from a single piece to thousands. 
+                  </p>
+                  <p>We maintain uncompromising standards of quality and consistency at every stage of
+                  the process.</p>
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
 
