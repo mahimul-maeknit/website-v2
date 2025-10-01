@@ -8,24 +8,28 @@ import { ChevronRight } from "lucide-react"
 export default function AboutPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [isAtStart, setIsAtStart] = useState(true)
+  const [isAtEnd, setIsAtEnd] = useState(false)
 
   const scrollToNext = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
-        left: window.innerWidth * 0.6,
+        left: window.innerWidth * 0.3,
         behavior: "smooth",
       })
     }
   }
-
   useEffect(() => {
     const container = scrollContainerRef.current
     if (!container) return
-
+  
     const handleScroll = () => {
       setIsAtStart(container.scrollLeft < 50)
+  
+      // check if near the end (with some tolerance)
+      const nearEnd = container.scrollWidth - container.scrollLeft - container.clientWidth < 50
+      setIsAtEnd(nearEnd)
     }
-
+  
     container.addEventListener("scroll", handleScroll)
     return () => container.removeEventListener("scroll", handleScroll)
   }, [])
@@ -168,7 +172,7 @@ export default function AboutPage() {
                   the process.</p>
                 </div>
               </div>
-            </div>
+            </div> 
             
           </div>
         </div>
