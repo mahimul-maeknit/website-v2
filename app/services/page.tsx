@@ -67,7 +67,7 @@ export default function ServicesPage() {
       image: "/images/latest/about_us_left_1.jpg",
     },
     {
-      id: "our-labs",
+      id: "labs",
       title: "OUR LABS",
       image: "/images/latest/our_labs.png",
     },
@@ -89,7 +89,8 @@ export default function ServicesPage() {
         <div className="services-scroll-wrapper">
           <div className="services-scroll-container" ref={scrollContainerRef}>
             {services.map((service, index) => (
-              <Link href={`/services/${service.id}`} key={service.id} className="service-box">
+              <Link   href={service.id === "labs" ? "/labs" : `/services/${service.id}`}
+              key={service.id} className="service-box">
                 <div className="service-box-header">
                   <h2 className="service-box-title">{service.title}</h2>
                   {index === 2 && canScrollRight && (
