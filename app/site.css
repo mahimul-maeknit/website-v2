@@ -255,7 +255,6 @@ p {
   line-height: 1.4;
 }
 
-
 .collaborate-options strong {
   display: block;
   font-weight: 600;
@@ -274,7 +273,7 @@ p {
 }
 
 .about-layout.full {
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
 }
 
 .swatching-layout {
@@ -422,25 +421,37 @@ p {
   margin-bottom: 12px;
 }
 
-/* Bottom brand (nav + round logo) */
 .bottom-brand {
   padding-top: 0;
   padding-bottom: 0;
 }
+
 .bottom-brand .brand-inner {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  justify-content: flex-start; /* align to left */
-  padding: 0px var(--gutter);
+  width: 100%;
 }
-.brand-nav ul {
+
+.brand-nav {
   display: flex;
-  justify-content: flex-start; /* align to left */
-  gap: clamp(22px, 8vw, 120px);
+  justify-content: space-between; /* distribute evenly */
+  align-items: center;
+  width: 100%;
   list-style: none;
   margin: 0;
   padding: 8px 0;
 }
+
+.brand-nav li {
+  text-align: center;
+}
+
+.brand-nav li:first-child {
+  text-align: left; /* About flush to left edge */
+}
+
+.brand-nav li:last-child {
+  text-align: right; /* Logo flush to right edge */
+}
+
 .brand-nav a {
   text-decoration: none;
   font-size: var(--menu-size);
@@ -449,10 +460,16 @@ p {
   letter-spacing: 0.3em;
   padding: 6px 2px;
 }
+
 .brand-nav a:hover,
 .brand-nav a.active {
   opacity: 0.7;
-  text-decoration: none;
+}
+
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .explore-grid {

@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import Link from "next/link"
-import Image from "next/image"
-import Header from "@/components/header"
-import { Linkedin, Phone, Instagram, Mail, MapPin } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import Header from "@/components/header";
+import { Linkedin, Phone, Instagram, Mail, MapPin } from "lucide-react";
 
 interface SiteLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function SiteLayout({ children }: SiteLayoutProps) {
@@ -22,29 +22,28 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
       <section className="bottom-brand" aria-label="Primary navigation">
         <div className="rule" aria-hidden="true"></div>
         <div className="container brand-inner">
-          <nav className="brand-nav" aria-label="Section links">
-            <ul>
-              <li>
-                <Link href="/about">About</Link>
-              </li>
-              <li>
-                <Link href="/services">Services</Link>
-              </li>
-              <li>
-                <Link href="/onboarding">Onboarding</Link>
-              </li>
-              <li>
-                <Link href="/work">Our Work</Link>
-              </li>
-              <li>
-                <Link href="/services#development">Design</Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="brand-logo">
-            <Image src="/brand/round_logo.png" alt="MAEKNIT round logo" width={30} height={100} />
-          </div>
+          <ul className="brand-nav">
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/services">Services</Link>
+            </li>
+            <li>
+              <Link href="/onboarding">Onboarding</Link>
+            </li>
+            <li>
+              <Link href="/work">Our Work</Link>
+            </li>
+            <li>
+              <Link href="/services#development">Design</Link>
+            </li>
+            <li className="brand-logo">
+              <Image src="/brand/round_logo.png" alt="MAEKNIT round logo" width={30} height={30} />
+            </li>
+          </ul>
         </div>
+
 
         {/* City + Social Row */}
         <div className="container city-social">
@@ -56,7 +55,12 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
               </Link>
             </li>
             <li>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
                 <Linkedin size={18} />
               </a>
             </li>
@@ -66,7 +70,12 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
               </a>
             </li>
             <li>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+              >
                 <Instagram size={18} />
               </a>
             </li>
@@ -84,5 +93,5 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
         </div>
       </section>
     </>
-  )
+  );
 }
