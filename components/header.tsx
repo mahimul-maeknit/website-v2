@@ -1,31 +1,45 @@
 'use client'
 
-import Image from "next/image"
 import Link from "next/link"
 
 export default function Header() {
   return (
-    <header className="site-header" role="banner" aria-label="Top">
-      
-      <div className="container header-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '100px' }}>
+    <header className="site-header" role="banner" aria-label="Top"  style={{ marginTop: "-60px" }} >
+      <div
+        className="container header-inner"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginTop: '100px',
+        }}
+      >
         <Link href="/" className="brand" aria-label="MAEKNIT Home">
-        <Image
-          src="/brand/maeknit_font.png"
-          alt="MAEKNIT"
-          width={200} /* bigger text */
-          height={200}  /* let width control scaling */
-          priority
-          style={{
-            height: 'auto',
-            display: 'block',
-          }}
-          className="brand-logo"
-        />
-
+          <span
+            style={{
+              fontFamily: "Gulp, sans-serif",
+              fontSize: "42.6px",   // matches “Gulp 42.6”
+              fontWeight: "normal",
+              display: "block",
+              lineHeight: 1,
+            }}
+          >
+            MAEKNIT
+          </span>
         </Link>
-        <div className="tagline subheading caps">Knitwear Development Lab</div>
+
+        <div
+          className="tagline subheading caps"
+          style={{
+            fontFamily: "TT Commons, sans-serif",
+            fontSize: "14.6px",
+            fontWeight: "BOLD",
+            letterSpacing: "1px", // optional, if you want spaced caps
+          }}
+        >
+          Knitwear Development Lab
+        </div>
       </div>
-      <div className="rule" aria-hidden="true"></div>
     </header>
   )
 }

@@ -11,21 +11,22 @@ export default function Page() {
       <Header />
 
       {/* HERO FRAME (carousel placeholder) */}
-      <section className="hero-frame" aria-label="Featured">
-      <div className="rule"></div> {/* Top rule */}
-      <div className="container">
-        <video
-          src="/videos/abc.mp4"
-          width={1200}
-          height={520}
-          className="carousel-video"
-          autoPlay
-          muted
-          playsInline
-        />
-      </div>
-        <div className="rule"></div> {/* Bottom rule */}
-      </section>
+      <section className="hero-frame" aria-label="Featured"
+      >
+  <div className="container" style={{ position: "relative", width: "100%", height: "60vh" }}>
+    <Image
+      src="/images/cover.png"
+      alt="MAEKNIT Cover"
+      fill
+      priority
+      className="carousel-image"
+      style={{ objectFit: "cover" }} // fill the box while preserving aspect ratio
+    />
+  </div>
+  <div className="rule"     style={{ marginTop: "20px" }} 
+  ></div>
+</section>
+
 
       {/* BOTTOM brand (nav + round logo) */}
       <section className="bottom-brand" aria-label="Primary navigation">

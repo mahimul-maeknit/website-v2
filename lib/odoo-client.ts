@@ -34,7 +34,7 @@ type LeadData = {
  * Resolve tag IDs from interest values
  */
 function getTagIds(
-  models: unknown,
+  models: any, // Replace 'unknown' with 'any' or define a specific type for models
   db: string,
   uid: number,
   password: string,

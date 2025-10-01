@@ -1,96 +1,199 @@
-import PageFooter from "@/components/page-footer"
-import PageHeader from "@/components/page-header"
+"use client"
+
+import { useRef } from "react"
+import Link from "next/link"
 import Image from "next/image"
+import Header from "@/components/header"
+import { Linkedin, Phone, Instagram, Mail, MapPin, ChevronRight } from "lucide-react"
 
 export default function AboutPage() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+
+  const scrollToNext = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: window.innerWidth * 0.6, behavior: "smooth" })
+    }
+  }
+
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      <PageHeader title="ABOUT" />
+    <>
+      <Header />
 
-      <main className="flex-grow">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            {/* Left Column - Text Content */}
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <p className="text-base leading-relaxed">
-                  We streamline the knitwear process with no minimums, no delays, and no compromises. Our end-to-end
-                  model connects designers with expert technicians, bridging the gap between concept and production
-                  through precision, speed, and craft.
-                </p>
-
-                <p className="text-base leading-relaxed">
-                  At <strong>MAEKNIT</strong>, we <span className="underline">bring</span> advanced knitting technology,
-                  zero-waste labs, and expert support to help brands move from sketch to shelf in record time. Our team
-                  of knitwear designers, programmers, and technicians partner with you at every step, from first
-                  prototype to scalable production.
-                </p>
+      {/* Main Content Area - replaces carousel */}
+      <section className="about-content-frame" aria-label="About">
+        <div className="about-layout">
+          {/* Left Static Panel */}
+          <div className="about-static-panel">
+            <div className="static-panel-inner">
+              <h2 className="static-panel-title">HOW IT WORKS</h2>
+              <div className="static-panel-image">
+                <Image
+                  src="/images/how-it-works.png"
+                  alt="Colorful yarn and textile samples"
+                  fill
+                  className="object-cover"
+                />
               </div>
+            </div>
+          </div>
 
-              <div className="pt-4">
-                <h3 className="text-xl font-bold tracking-wider mb-6 border-b border-black pb-2">
-                  RESHORING WITH INTENTION
-                </h3>
-
-                <div className="space-y-4">
-                  <p className="text-base leading-relaxed">
-                    With laboratories in <strong>New York</strong> and <strong>London</strong> and a global production
-                    network, we bring technical excellence back to the center of fashion. We don&apos;t just accelerate
-                    timelines — we <span className="underline">redesign</span> the system. Transparent, responsive, and
-                    built to match the rhythm of modern design.
+          {/* Right Scrollable Panels */}
+          <div className="about-scroll-container" ref={scrollContainerRef}>
+            {/* Panel 1: About Us */}
+            <div className="about-scroll-panel">
+              <div className="scroll-panel-header">
+                <h2 className="scroll-panel-title">NO MINIMUMS, NO DELAYS, NO COMPROMISES</h2>
+                <button onClick={scrollToNext} className="scroll-indicator" aria-label="Scroll to next section">
+                  <ChevronRight size={32} />
+                  <ChevronRight size={32} className="-ml-4" />
+                  <ChevronRight size={32} className="-ml-4" />
+                </button>
+              </div>
+              <div className="scroll-panel-content">
+                <div className="scroll-panel-image">
+                  <Image src="/images/about-1.png" alt="Colorful yarn spools" fill className="object-cover" />
+                </div>
+                <div className="scroll-panel-text">
+                  <p>
+                    We&apos;re not just a knitwear factory, we&apos;re the bridge between creative vision and industrial
+                    execution.
                   </p>
-
-                  <p className="text-base leading-relaxed">
-                    We collaborate with brands, retailers and emerging designers to bring ideas to life — whether it&apos;s a
-                    single sample or a full collection. Every piece we produce reflects discipline, care, and a lifetime
-                    of experience.
+                  <p>
+                    With advanced studios in <strong>NYC</strong> and <strong>LONDON</strong>, we combine cutting edge
+                    technology, deep expertise, and vetted global factory access to deliver knitwear at the speed of
+                    modern fashion.
                   </p>
-
-                  <p className="text-base leading-relaxed">
-                    We manage the complexity behind the scenes, so you receive exactly what you envisioned — on time, at
-                    scale, without compromise. Delivered to your studio, showroom, or doorstep.
+                  <p>
+                    We&apos;ve <strong>rebuilt the entire system</strong> from the ground up, ensuring you&apos;ll never
+                    compromise on your vision.
+                  </p>
+                  <p>
+                    From first sketch to final delivery, consider <strong>MAEKNIT</strong> your partner in creation.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Images */}
-            <div className="space-y-4">
-              <div className="h-[320px] overflow-hidden">
-                <Image
-                  src="/images/ab1.png"
-                  alt="Knit fabric texture detail"
-                  className="w-full h-full object-cover"
-                  width={800}   
-                  height={320}                 
-                />
+            {/* Panel 2: Conception */}
+            <div className="about-scroll-panel">
+              <div className="scroll-panel-header">
+                <h2 className="scroll-panel-title">CONCEPTION</h2>
+                <button onClick={scrollToNext} className="scroll-indicator" aria-label="Scroll to next section">
+                  <ChevronRight size={32} />
+                  <ChevronRight size={32} className="-ml-4" />
+                  <ChevronRight size={32} className="-ml-4" />
+                </button>
               </div>
-              <div className="h-[320px] overflow-hidden">
-                <Image
-                  src="/images/ab2.png"
-                  alt="Textile material close-up"
-                  className="w-full h-full object-cover"
-                  width={800}   
-                  height={320}  
-                />
+              <div className="scroll-panel-content">
+                <div className="scroll-panel-image">
+                  <Image src="/images/about-2.png" alt="Textile conception" fill className="object-cover" />
+                </div>
+                <div className="scroll-panel-text">
+                  <p>
+                    Transform ideas into tangible possibilities through hands-on collaboration, 3D modeling, and
+                    advanced visualization.
+                  </p>
+                  <p>Our NYC and London studios turn concepts into reality with speed and precision.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Panel 3: Refinement */}
+            <div className="about-scroll-panel">
+              <div className="scroll-panel-header">
+                <h2 className="scroll-panel-title">REFINEMENT</h2>
+                <button onClick={scrollToNext} className="scroll-indicator" aria-label="Scroll to next section">
+                  <ChevronRight size={32} />
+                  <ChevronRight size={32} className="-ml-4" />
+                  <ChevronRight size={32} className="-ml-4" />
+                </button>
+              </div>
+              <div className="scroll-panel-content">
+                <div className="scroll-panel-image">
+                  <Image src="/images/about-3.png" alt="Refined textile sample" fill className="object-cover" />
+                </div>
+                <div className="scroll-panel-text">
+                  <p>
+                    Perfect every detail with precision sampling and real-time iteration, refining designs quickly and
+                    confidently.
+                  </p>
+                  <p>
+                    Industry-standard machinery ensures what you sample is exactly what goes into production, with no
+                    surprises when it matters most.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-2">
-            <button className="px-8 py-3 bg-pink-200 text-black font-medium tracking-wider rounded-lg hover:bg-pink-300 transition-colors">
-              BOOK A CONSULTATION
-            </button>
-            <button className="px-8 py-3 bg-pink-200 text-black font-medium tracking-wider rounded-lg hover:bg-pink-300 transition-colors">
-              EXPLORE OUR LABS
-            </button>
+      {/* Bottom Navigation - same as homepage */}
+      <section className="bottom-brand" aria-label="Primary navigation">
+        <div className="rule" aria-hidden="true"></div>
+        <div className="container brand-inner">
+          <nav className="brand-nav" aria-label="Section links">
+            <ul>
+              <li>
+                <Link href="/about" className="active">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/services">Services</Link>
+              </li>
+              <li>
+                <Link href="/onboarding">Onboarding</Link>
+              </li>
+              <li>
+                <Link href="/work">Our Work</Link>
+              </li>
+              <li>
+                <Link href="/services#development">Design</Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="brand-logo">
+            <Image src="/brand/round_logo.png" alt="MAEKNIT round logo" width={100} height={100} />
           </div>
         </div>
-      </main>
 
-      <PageFooter />
-    </div>
+        <div className="container city-social">
+          <p className="city">New York &amp; London</p>
+          <ul className="social">
+            <li>
+              <Link href="/" aria-label="Website">
+                <MapPin size={18} />
+              </Link>
+            </li>
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <Linkedin size={18} />
+              </a>
+            </li>
+            <li>
+              <a href="tel:+10000000000" aria-label="Phone">
+                <Phone size={18} />
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <Instagram size={18} />
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hello@maeknit.example" aria-label="Email">
+                <Mail size={18} />
+              </a>
+            </li>
+            <li>
+              <Link href="/labs" aria-label="Location">
+                <MapPin size={18} />
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </>
   )
 }

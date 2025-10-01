@@ -118,6 +118,20 @@ body {
   font-size: 16px; /* Body text size */
 }
 
+@font-face {
+  font-family: "TT Commons";
+  src: url("/fonts/tt-commons/TT-Commons-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gulp";
+  src: url("/fonts/gulp/GulpDemo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-tt-commons-demi), sans-serif;
