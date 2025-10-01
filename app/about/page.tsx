@@ -16,27 +16,18 @@ export default function AboutPage() {
   const scrollToNext = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
-        left: window.innerWidth * 0.1,
+        left: window.innerWidth * 0.3,
         behavior: "smooth",
       });
     }
   };
-  const scrollToPrev = () => {
-    router.refresh(); // reloads the current route
-  };
-  
+
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
     const handleScroll = () => {
       setIsAtStart(container.scrollLeft < 50);
-
-      // check if near the end (with some tolerance)
-      const nearEnd =
-        container.scrollWidth - container.scrollLeft - container.clientWidth <
-        50;
-      setIsAtEnd(nearEnd);
     };
 
     container.addEventListener("scroll", handleScroll);
@@ -205,7 +196,7 @@ export default function AboutPage() {
                   <div className="scroll-panel-header">
                     <h2 className="scroll-panel-title">REALIZATION</h2>
                     <button
-                      onClick={scrollToNext}
+                      onClick={() => setIsAtEnd(true)}
                       className="scroll-indicator"
                       aria-label="Scroll to next section"
                     >
@@ -277,7 +268,7 @@ export default function AboutPage() {
                 <div className="scroll-panel-header">
                   <h2 className="scroll-panel-title">Our Team</h2>
                   <button
-                    onClick={scrollToPrev}
+                    onClick={() => setIsAtEnd(false)}
                     className="scroll-indicator"
                     aria-label="Scroll to next section"
                   >
