@@ -504,6 +504,11 @@ p {
   flex-direction: column;
 }
 
+.explore-box .static-panel-image {
+  height: 400px; /* Increased from default 350px */
+  margin-top: 2px; /* Reduced from 16px */
+}
+
 .overlay-text {
   position: absolute;
   bottom: 20px;
@@ -571,35 +576,28 @@ p {
   margin: 0 auto;
   height: clamp(220px, 38vw, 520px);
   padding: 24px 0;
+  /* Hide any overflow to prevent partial boxes from showing */
+  overflow: hidden;
 }
 
 .services-scroll-container {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc(33.333% - 16px);
+  /* Fixed calculation to fit exactly 3 boxes with 24px gaps */
+  grid-auto-columns: calc((100% - 48px) / 3);
   gap: 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   height: 100%;
-  padding: 0 24px;
+  /* Hide scrollbar for all browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
+/* Hide scrollbar for webkit browsers */
 .services-scroll-container::-webkit-scrollbar {
-  height: 8px;
-}
-
-.services-scroll-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.services-scroll-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
-.services-scroll-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.4);
+  display: none;
 }
 
 .service-box {

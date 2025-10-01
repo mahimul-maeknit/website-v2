@@ -84,7 +84,7 @@ export default function SwatchingPage() {
                 </div>
                 <Link href="/onboarding" className="static-panel-image">
                   <Image
-                    src="/images/latest/swatching.jpg"
+                    src="/images/latest/order_swatches.png"
                     alt="Order Swatches"
                     fill
                     className="object-cover"

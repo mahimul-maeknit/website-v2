@@ -74,7 +74,21 @@ export default function DevelopmentPage() {
             </>
           ) : <>
           {/* Left static panel */}
+          <div className="about-static-panel">
+            <div className="static-panel-inner">
+              <h2 className="static-panel-title">VIEW COURSES</h2>
+              <div className="static-panel-image">
+                <Image
+                  src="/images/latest/view_courses.png"
+                  alt="View Courses"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
 
+          {/* Right content panel */}
           <div className="about-scroll-container">
             <div className="about-scroll-panel">
               <div className="scroll-panel-header">
@@ -82,6 +96,15 @@ export default function DevelopmentPage() {
                 MASTER YOUR CRAFT
                 </h2>
                 {/* Always show chevron */}
+                <button
+                  onClick={() => setShowExploreGrid(false)}
+                  className="scroll-indicator"
+                  aria-label="Go to explore grid"
+                >
+                  <ChevronRight size={32} />
+                  <ChevronRight size={32} className="-ml-4" />
+                  <ChevronRight size={32} className="-ml-4" />
+                </button>
               </div>
               <div className="scroll-panel-content no-image">
                 <div className="scroll-panel-text">
@@ -106,34 +129,6 @@ export default function DevelopmentPage() {
               </div>
             </div>
           </div>
-          <div className="about-static-panel">
-            <div className="static-panel-inner">
-            <div className="scroll-panel-header">
-
-              <h2 className="static-panel-title">VIEW COURSES</h2>
-              <button
-                      onClick={() => setShowExploreGrid(false)}
-                      className="scroll-indicator"
-                      aria-label="Go to explore grid"
-                    >
-                      <ChevronRight size={32} />
-                      <ChevronRight size={32} className="-ml-4" />
-                      <ChevronRight size={32} className="-ml-4" />
-                    </button>
-              </div>      
-              <div className="static-panel-image">
-                <Image
-                  src="/images/latest/view_courses.png"
-                  alt="Education"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Right content panel */}
-          
         </>}
         </div>
 
