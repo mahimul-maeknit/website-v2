@@ -23,7 +23,7 @@ export default function Page() {
       style={{ objectFit: "cover" }} // fill the box while preserving aspect ratio
     />
   </div>
-  <div className="rule"     style={{ marginTop: "20px" }} 
+  <div className="rule" style={{ marginTop: "20px" }} 
   ></div>
 </section>
 

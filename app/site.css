@@ -230,19 +230,20 @@ p {
 .about-layout {
   display: grid;
   grid-template-columns: 320px 1fr;
-  height: clamp(400px, 50vh, 600px);
-  max-width: var(--max-w); /* Add this - matches homepage width */
-  margin: 0 auto; /* Keep centered */
-  overflow: hidden; /* Add this */
+  gap: 20px;              /* spacing between the two boxes */
+  max-width: var(--max-w);
+  margin: 0 auto;
+  align-items: stretch;   /* make both boxes equal height */
 }
 
 .about-static-panel {
   background: var(--bg);
   border: 2px solid var(--border);
-  border-left: none;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
 }
+
 
 .static-panel-inner {
   padding: 24px;
@@ -267,16 +268,25 @@ p {
   min-height: 0;
 }
 
-/* Scrollable Right Panel */
+
 .about-scroll-container {
+  border: 2px solid var(--border); /* its own box */
   display: flex;
   overflow-x: auto;
-  overflow-y: hidden; /* Add this */
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  cursor: grab; /* Add visual feedback */
 }
+
+.about-scroll-panel {
+  min-width: 100%;
+  scroll-snap-align: start;
+  background: var(--bg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
 
 .about-scroll-container:active {
   cursor: grabbing; /* Add visual feedback */
@@ -298,18 +308,6 @@ p {
 
 .about-scroll-container::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.4);
-}
-
-.about-scroll-panel {
-  min-width: 100%;
-  scroll-snap-align: start;
-  background: var(--bg);
-  border: 2px solid var(--border);
-  border-left: none;
-  border-right: 2px solid var(--border);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
 }
 
 .scroll-panel-header {
