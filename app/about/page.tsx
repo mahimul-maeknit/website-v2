@@ -1,37 +1,43 @@
-"use client"
+"use client";
 
-import { useRef, useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import Header from "@/components/header"
-import { Linkedin, Phone, Instagram, Mail, MapPin, ChevronRight } from "lucide-react"
-import Footer from "@/components/footer"
+import { useRef, useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import Header from "@/components/header";
+import {
+  Linkedin,
+  Phone,
+  Instagram,
+  Mail,
+  MapPin,
+  ChevronRight,
+} from "lucide-react";
 
 export default function AboutPage() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const [isAtStart, setIsAtStart] = useState(true)
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isAtStart, setIsAtStart] = useState(true);
 
   const scrollToNext = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
         left: window.innerWidth * 0.6,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
 
   useEffect(() => {
-    const container = scrollContainerRef.current
-    if (!container) return
+    const container = scrollContainerRef.current;
+    if (!container) return;
 
     const handleScroll = () => {
       // If scrolled less than 50px, we’re at start
-      setIsAtStart(container.scrollLeft < 50)
-    }
+      setIsAtStart(container.scrollLeft < 50);
+    };
 
-    container.addEventListener("scroll", handleScroll)
-    return () => container.removeEventListener("scroll", handleScroll)
-  }, [])
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -48,8 +54,16 @@ export default function AboutPage() {
               </h2>
               <div className="static-panel-image">
                 <Image
-                  src="/images/latest/how_it_works.jpg"
-                  alt="Colorful yarn and textile samples"
+                  src={
+                    isAtStart
+                      ? "/images/latest/about_us_left_1.jpg" // image for ABOUT US
+                      : "/images/latest/how_it_works.jpg" // image for HOW IT WORKS
+                  }
+                  alt={
+                    isAtStart
+                      ? "About us yarn and textile samples"
+                      : "How it works process imagery"
+                  }
                   fill
                   className="object-cover"
                 />
@@ -75,19 +89,11 @@ export default function AboutPage() {
                   <ChevronRight size={32} className="-ml-4" />
                 </button>
               </div>
-              <div className="scroll-panel-content">
-                <div className="scroll-panel-image">
-                  <Image
-                    src="/images/about-1.png"
-                    alt="Colorful yarn spools"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+              <div className="scroll-panel-content no-image">
                 <div className="scroll-panel-text">
                   <p>
-                    We&apos;re not just a knitwear factory, we&apos;re the bridge
-                    between creative vision and industrial execution.
+                    We&apos;re not just a knitwear factory, we&apos;re the
+                    bridge between creative vision and industrial execution.
                   </p>
                   <p>
                     With advanced studios in <strong>NYC</strong> and{" "}
@@ -125,17 +131,16 @@ export default function AboutPage() {
               <div className="scroll-panel-content">
                 <div className="scroll-panel-image">
                   <Image
-                    src="/images/about-2.png"
+                    src="/images/latest/conception.jpg"
                     alt="Textile conception"
                     fill
-                    className="object-cover"
+                    style={{ objectFit: "contain", backgroundColor: "#fff" }}
                   />
                 </div>
                 <div className="scroll-panel-text">
                   <p>
-                    Transform ideas into tangible possibilities through
-                    hands-on collaboration, 3D modeling, and advanced
-                    visualization.
+                    Transform ideas into tangible possibilities through hands-on
+                    collaboration, 3D modeling, and advanced visualization.
                   </p>
                   <p>
                     Our NYC and London studios turn concepts into reality with
@@ -183,13 +188,13 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        
-  <div className="rule" style={{ marginTop: "20px" }} 
-  ></div>
+
+        <div className="rule" style={{ marginTop: "20px" }}></div>
       </section>
       {/* BOTTOM brand (nav + round logo) */}
       <section className="bottom-brand" aria-label="Primary navigation">
-        <div className="rule" aria-hidden="true"></div> {/* This is the rule *above* the menu */}
+        <div className="rule" aria-hidden="true"></div>{" "}
+        {/* This is the rule *above* the menu */}
         <div className="container brand-inner">
           <nav className="brand-nav" aria-label="Section links">
             <ul>
@@ -230,7 +235,12 @@ export default function AboutPage() {
               </Link>
             </li>
             <li>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
                 <Linkedin size={18} />
               </a>
             </li>
@@ -240,7 +250,12 @@ export default function AboutPage() {
               </a>
             </li>
             <li>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+              >
                 <Instagram size={18} />
               </a>
             </li>
@@ -257,7 +272,6 @@ export default function AboutPage() {
           </ul>
         </div>
       </section>
-
     </>
-  )
+  );
 }

@@ -219,21 +219,36 @@ p {
   object-fit: cover;
   border: 1px solid #cfcfcf;
 }
+.scroll-panel-content.no-image {
+  display: block; /* full width for text */
+}
 
+.scroll-panel-content.no-image .scroll-panel-text p {
+  font-family: "TT Commons", sans-serif;
+  font-size: 15.6px;
+  line-height: 1.6;
+  margin-bottom: 1rem; /* consistent spacing between paragraphs */
+}
+
+.scroll-panel-content.no-image .scroll-panel-text strong {
+  font-weight: 600; /* make emphasis look clean without going too bold */
+}
 /* About Content Frame - replaces carousel */
 .about-content-frame {
   padding: 0;
   margin: 0;
   background: var(--muted-bg);
+  min-height: clamp(220px, 38vw, 520px); /* Match carousel height */
 }
 
 .about-layout {
   display: grid;
   grid-template-columns: 320px 1fr;
-  gap: 20px;              /* spacing between the two boxes */
+  gap: 20px;
   max-width: var(--max-w);
   margin: 0 auto;
-  align-items: stretch;   /* make both boxes equal height */
+  align-items: stretch;
+  height: clamp(220px, 38vw, 520px); /* Match carousel height exactly */
 }
 
 .about-static-panel {
@@ -243,7 +258,6 @@ p {
   flex-direction: column;
   padding: 24px;
 }
-
 
 .static-panel-inner {
   padding: 24px;
@@ -268,7 +282,6 @@ p {
   min-height: 0;
 }
 
-
 .about-scroll-container {
   border: 2px solid var(--border); /* its own box */
   display: flex;
@@ -286,7 +299,6 @@ p {
   display: flex;
   flex-direction: column;
 }
-
 
 .about-scroll-container:active {
   cursor: grabbing; /* Add visual feedback */
@@ -344,24 +356,21 @@ p {
   transform: translateX(4px);
   opacity: 1;
 }
-
 .scroll-panel-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  flex: 1;
-  min-height: 0;
+  display: flex;
+  align-items: center; /* vertically center image & text */
+  gap: 2rem; /* spacing between image and text */
 }
 
 .scroll-panel-image {
-  position: relative;
-  min-height: 200px;
+  flex: 1; /* take up space */
+  max-width: 40%; /* control image size */
+  position: relative; /* required for Next.js Image fill */
+  aspect-ratio: 4 / 3; /* or whatever ratio your image needs */
 }
 
 .scroll-panel-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1.5;
 }
 
 .scroll-panel-text p {
