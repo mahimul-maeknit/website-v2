@@ -243,12 +243,12 @@ p {
 
 .about-layout {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 420px 1fr; /* Increased from 320px to 420px */
   gap: 20px;
   max-width: var(--max-w);
   margin: 0 auto;
   align-items: stretch;
-  height: clamp(220px, 38vw, 520px); /* Match carousel height exactly */
+  height: clamp(220px, 38vw, 520px); /* Match carousel height */
 }
 
 .about-static-panel {
@@ -363,10 +363,10 @@ p {
 }
 
 .scroll-panel-image {
-  flex: 1; /* take up space */
-  max-width: 40%; /* control image size */
-  position: relative; /* required for Next.js Image fill */
-  aspect-ratio: 4 / 3; /* or whatever ratio your image needs */
+  position: relative;
+  width: 320px; /* Fixed width similar to left panel proportions */
+  height: 320px; /* Square aspect ratio */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .scroll-panel-text {
