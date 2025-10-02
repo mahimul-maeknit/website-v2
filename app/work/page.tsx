@@ -1,11 +1,53 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import Image from "next/image";
-import SiteLayout from "@/components/site-layout";
-import { ChevronRight } from "lucide-react";
+import { useRef, useState, useEffect } from "react"
+import Image from "next/image"
+import SiteLayout from "@/components/site-layout"
+import { ChevronRight, ChevronLeft } from "lucide-react"
 
 export default function WorkPage() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  const scrollToNext = () => {
+    if (scrollContainerRef.current) {
+      const containerWidth = scrollContainerRef.current.offsetWidth
+      scrollContainerRef.current.scrollBy({
+        left: containerWidth,
+        behavior: "smooth",
+      })
+    }
+  }
+
+  const scrollToPrev = () => {
+    if (scrollContainerRef.current) {
+      const containerWidth = scrollContainerRef.current.offsetWidth
+      scrollContainerRef.current.scrollBy({
+        left: -containerWidth,
+        behavior: "smooth",
+      })
+    }
+  }
+
+  useEffect(() => {
+    const container = scrollContainerRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft
+      const scrollWidth = container.scrollWidth
+      const clientWidth = container.clientWidth
+
+      setCanScrollLeft(scrollLeft > 10)
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
+    }
+
+    container.addEventListener("scroll", handleScroll)
+    handleScroll() // run once
+    return () => container.removeEventListener("scroll", handleScroll)
+  }, [])
+
   const workItems = [
     {
       title: "Mock Rib Side Seam",
@@ -55,111 +97,81 @@ export default function WorkPage() {
       knitBy: "Lauren McDermott",
       image: "/images/11.png",
     },
-  ];
-
-  // split into panels of 3
-  const panels = [];
-  for (let i = 0; i < workItems.length; i += 3) {
-    panels.push(workItems.slice(i, i + 3));
-  }
-
-  const [panelIndex, setPanelIndex] = useState(0);
-
-  const handleNext = () => {
-    setPanelIndex((prev) => (prev + 1) % panels.length);
-  };
+  ]
 
   return (
     <SiteLayout>
-      <section className="about-content-frame" aria-label="Our Work">
-        <div className="about-scroll-container">
-          <div className="about-scroll-panel">
-            <div className="scroll-panel-header">
-              <h2 className="scroll-panel-title">OUR WORK</h2>
-              <button
-                onClick={handleNext}
-                className="scroll-indicator"
-                aria-label="Go to next work panel"
-              >
-                <ChevronRight size={32} />
-                <ChevronRight size={32} className="-ml-4" />
-                <ChevronRight size={32} className="-ml-4" />
-              </button>
-            </div>
-
-            {/* Panel of 3 cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {panels[panelIndex].map((item, index) => (
-                <div key={index} className="border-b border-black pb-6">
-                  {/* Header */}
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="font-sans text-sm font-medium tracking-wide uppercase">
-                        {item.title}
-                      </h3>
-                      <p className="font-sans text-xs text-gray-600 mt-1">
-                        {item.client}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-sans text-xs font-medium tracking-wide uppercase">
-                        MANUFACTURED
-                      </p>
-                      <p className="font-sans text-xs text-gray-600 mt-1">
-                        {item.manufactured}
-                      </p>
-                    </div>
+      <section className="works-content-frame" aria-label="Our Work">
+        <div className="services-scroll-wrapper">
+          <div className="services-scroll-container" ref={scrollContainerRef}>
+            {workItems.map((item, index) => (
+              <div key={index} className="service-box">
+                <div className="service-box-header">
+                  <div>
+                    <h2 className="service-box-title">{item.title}</h2>
+                    <p className="text-xs text-gray-600">{item.client}</p>
                   </div>
+                  {index === 2 && canScrollRight && (
+                    <button
+                      onClick={scrollToNext}
+                      className="scroll-indicator-right"
+                      aria-label="Next work items"
+                    >
+                      <ChevronRight size={32} />
+                      <ChevronRight size={32} className="-ml-4" />
+                      <ChevronRight size={32} className="-ml-4" />
+                    </button>
+                  )}
+                  {index === workItems.length - 1 && canScrollLeft && (
+                    <button
+                      onClick={scrollToPrev}
+                      className="scroll-indicator-left"
+                      aria-label="Previous work items"
+                    >
+                      <ChevronLeft size={32} />
+                    </button>
+                  )}
+                </div>
 
-                  {/* Image */}
-                  <div className="aspect-square mb-4 bg-gray-100 overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover"
-                    />
+                {/* Image */}
+                <div className="service-box-image">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Footer */}
+                <div className="mt-4 flex justify-between items-end">
+                  <div>
+                    <p className="text-xs font-medium uppercase mb-1">YARN TYPE</p>
+                    <p className="text-xs text-gray-800">{item.yarnType}</p>
                   </div>
-
-                  {/* Footer */}
-                  <div className="flex justify-between items-end">
+                  <div className="flex items-end gap-3 text-right">
                     <div>
-                      <p className="font-sans text-xs font-medium tracking-wide uppercase mb-1">
-                        YARN TYPE
-                      </p>
-                      <p className="font-sans text-xs text-gray-800">
-                        {item.yarnType}
-                      </p>
+                      <p className="text-xs font-medium uppercase mb-1">KNIT BY</p>
+                      <p className="text-xs text-gray-800">{item.knitBy}</p>
                     </div>
-                    <div className="text-right flex items-end gap-3">
-                      <div>
-                        <p className="font-sans text-xs font-medium tracking-wide uppercase mb-1">
-                          KNIT BY
-                        </p>
-                        <p className="font-sans text-xs text-gray-800">
-                          {item.knitBy}
-                        </p>
-                      </div>
-                      <div className="w-6 h-6">
-                        <Image
-                          src="/brand/round_logo.png"
-                          alt="MAEKNIT round logo"
-                          width={12}
-                          height={12}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
+                    <div className="w-6 h-6">
+                      <Image
+                        src="/brand/round_logo.png"
+                        alt="MAEKNIT logo"
+                        width={24}
+                        height={24}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="rule" style={{ marginTop: "20px" }}></div>
       </section>
     </SiteLayout>
-  );
+  )
 }
