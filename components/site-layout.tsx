@@ -18,6 +18,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
       {children}
 
       {/* BOTTOM brand (nav + round logo) */}
+      <Divider />
       <section className="bottom-brand" aria-label="Primary navigation">
         <div className="container brand-inner">
           <ul className="brand-nav">

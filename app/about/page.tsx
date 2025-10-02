@@ -4,7 +4,6 @@ import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import SiteLayout from "@/components/site-layout"
 import ScrollIndicator from "@/components/shared/scroll-indicator"
-import Divider from "@/components/shared/divider"
 
 export default function AboutPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -194,7 +193,6 @@ export default function AboutPage() {
             </div>
           )}
         </div>
-        <Divider className="mt-5" />
       </section>
     </SiteLayout>
   )

@@ -7,7 +7,7 @@ export default function Page() {
     <SiteLayout>
       {/* HERO FRAME (carousel placeholder) */}
       <section className="hero-frame" aria-label="Featured">
-        <div className="container" style={{ position: "relative", width: "100%", height: "60vh" }}>
+        <div className="container" style={{ position: "relative", width: "100%", height: "440px" }}>
           <Image
             src="/images/cover.png"
             alt="MAEKNIT Cover"
@@ -17,7 +17,6 @@ export default function Page() {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className="rule" style={{ marginTop: "20px" }}></div>
       </section>
 
       <main id="main">{/* No content here, as per your request for the homepage */}</main>
