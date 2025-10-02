@@ -1,14 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
+import BrandLogo from "@/components/shared/brand-logo"
 
 export default function Footer() {
   return (
     <footer className="pt-0 pb-6">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Divider line */}
         <hr className="border-t-2 border-black" />
-
-        {/* Row: brand left, logo right */}
         <div className="flex items-center justify-between pt-2">
           <Link href="/" className="brand" aria-label="MAEKNIT Home">
             <Image
@@ -19,16 +17,7 @@ export default function Footer() {
               style={{ height: "auto", display: "block" }}
             />
           </Link>
-
-          <div className="brand-logo">
-            <Image
-              src="/brand/round_logo.png"
-              alt="MAEKNIT round logo"
-              width={12}
-              height={12}
-              className="block"
-            />
-          </div>
+          <BrandLogo size={12} linkable />
         </div>
       </div>
     </footer>

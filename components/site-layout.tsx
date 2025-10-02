@@ -1,26 +1,24 @@
-"use client";
+"use client"
 
-import type React from "react";
-
-import Link from "next/link";
-import Image from "next/image";
-import Header from "@/components/header";
-import { Linkedin, Phone, Instagram, Mail, MapPin } from "lucide-react";
+import type React from "react"
+import Link from "next/link"
+import Header from "@/components/header"
+import SocialIcons from "@/components/shared/social-icons"
+import BrandLogo from "@/components/shared/brand-logo"
+import Divider from "@/components/shared/divider"
 
 interface SiteLayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export default function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <>
       <Header />
-
       {children}
 
       {/* BOTTOM brand (nav + round logo) */}
       <section className="bottom-brand" aria-label="Primary navigation">
-        <div className="rule" aria-hidden="true"></div>
         <div className="container brand-inner">
           <ul className="brand-nav">
             <li>
@@ -36,62 +34,20 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
               <Link href="/work">Our Work</Link>
             </li>
             <li>
-              <Link href="/services#development">Design</Link>
+              <Link href="/onboarding">Design</Link>
             </li>
             <li className="brand-logo">
-              <Image src="/brand/round_logo.png" alt="MAEKNIT round logo" width={30} height={30} />
+              <BrandLogo />
             </li>
           </ul>
         </div>
-
 
         {/* City + Social Row */}
         <div className="container city-social">
           <p className="city">New York &amp; London</p>
-          <ul className="social">
-            <li>
-              <Link href="/" aria-label="Website">
-                <MapPin size={18} />
-              </Link>
-            </li>
-            <li>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={18} />
-              </a>
-            </li>
-            <li>
-              <a href="tel:+10000000000" aria-label="Phone">
-                <Phone size={18} />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-            </li>
-            <li>
-              <a href="mailto:hello@maeknit.example" aria-label="Email">
-                <Mail size={18} />
-              </a>
-            </li>
-            <li>
-              <Link href="/labs" aria-label="Location">
-                <MapPin size={18} />
-              </Link>
-            </li>
-          </ul>
+          <SocialIcons />
         </div>
       </section>
     </>
-  );
+  )
 }

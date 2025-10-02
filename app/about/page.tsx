@@ -3,14 +3,13 @@
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import SiteLayout from "@/components/site-layout"
-import { ChevronRight } from "lucide-react"
-import { useRouter } from "next/navigation"
+import ScrollIndicator from "@/components/shared/scroll-indicator"
+import Divider from "@/components/shared/divider"
 
 export default function AboutPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [isAtStart, setIsAtStart] = useState(true)
   const [isAtEnd, setIsAtEnd] = useState(false)
-  const router = useRouter()
 
   const scrollToNext = () => {
     if (scrollContainerRef.current) {
@@ -35,10 +34,8 @@ export default function AboutPage() {
 
   return (
     <SiteLayout>
-      {/* Main Content Area - replaces carousel */}
       <section className="about-content-frame" aria-label="About">
         <div className={`about-layout ${isAtEnd ? "full" : ""}`}>
-          {/* Left Static Panel */}
           {!isAtEnd ? (
             <>
               <div className="about-static-panel">
@@ -55,17 +52,12 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Right Scrollable Panels */}
               <div className="about-scroll-container" ref={scrollContainerRef}>
                 {/* Panel 1: About Us */}
                 <div className="about-scroll-panel">
                   <div className="scroll-panel-header">
                     <h2 className="scroll-panel-title">NO MINIMUMS, NO DELAYS, NO COMPROMISES</h2>
-                    <button onClick={scrollToNext} className="scroll-indicator" aria-label="Scroll to next section">
-                      <ChevronRight size={32} />
-                      <ChevronRight size={32} className="-ml-4" />
-                      <ChevronRight size={32} className="-ml-4" />
-                    </button>
+                    <ScrollIndicator onClick={scrollToNext} ariaLabel="Scroll to next section" />
                   </div>
                   <div className="scroll-panel-content no-image">
                     <div className="scroll-panel-text">
@@ -93,11 +85,7 @@ export default function AboutPage() {
                 <div className="about-scroll-panel">
                   <div className="scroll-panel-header">
                     <h2 className="scroll-panel-title">CONCEPTION</h2>
-                    <button onClick={scrollToNext} className="scroll-indicator" aria-label="Scroll to next section">
-                      <ChevronRight size={32} />
-                      <ChevronRight size={32} className="-ml-4" />
-                      <ChevronRight size={32} className="-ml-4" />
-                    </button>
+                    <ScrollIndicator onClick={scrollToNext} ariaLabel="Scroll to next section" />
                   </div>
                   <div className="scroll-panel-content">
                     <div className="scroll-panel-image">
@@ -105,10 +93,7 @@ export default function AboutPage() {
                         src="/images/latest/conception.jpg"
                         alt="Textile conception"
                         fill
-                        style={{
-                          objectFit: "contain",
-                          backgroundColor: "#fff",
-                        }}
+                        style={{ objectFit: "contain", backgroundColor: "#fff" }}
                       />
                     </div>
                     <div className="scroll-panel-text">
@@ -125,11 +110,7 @@ export default function AboutPage() {
                 <div className="about-scroll-panel">
                   <div className="scroll-panel-header">
                     <h2 className="scroll-panel-title">REFINEMENT</h2>
-                    <button onClick={scrollToNext} className="scroll-indicator" aria-label="Scroll to next section">
-                      <ChevronRight size={32} />
-                      <ChevronRight size={32} className="-ml-4" />
-                      <ChevronRight size={32} className="-ml-4" />
-                    </button>
+                    <ScrollIndicator onClick={scrollToNext} ariaLabel="Scroll to next section" />
                   </div>
                   <div className="scroll-panel-content">
                     <div className="scroll-panel-image">
@@ -137,10 +118,7 @@ export default function AboutPage() {
                         src="/images/latest/refinement.jpg"
                         alt="Textile refinement"
                         fill
-                        style={{
-                          objectFit: "contain",
-                          backgroundColor: "#fff",
-                        }}
+                        style={{ objectFit: "contain", backgroundColor: "#fff" }}
                       />
                     </div>
                     <div className="scroll-panel-text">
@@ -156,19 +134,11 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Panel 4: RELIZATION */}
+                {/* Panel 4: REALIZATION */}
                 <div className="about-scroll-panel">
                   <div className="scroll-panel-header">
                     <h2 className="scroll-panel-title">REALIZATION</h2>
-                    <button
-                      onClick={() => setIsAtEnd(true)}
-                      className="scroll-indicator"
-                      aria-label="Scroll to next section"
-                    >
-                      <ChevronRight size={32} />
-                      <ChevronRight size={32} className="-ml-4" />
-                      <ChevronRight size={32} className="-ml-4" />
-                    </button>
+                    <ScrollIndicator onClick={() => setIsAtEnd(true)} ariaLabel="Scroll to next section" />
                   </div>
                   <div className="scroll-panel-content">
                     <div className="scroll-panel-image">
@@ -176,10 +146,7 @@ export default function AboutPage() {
                         src="/images/latest/realization.png"
                         alt="Textile relization"
                         fill
-                        style={{
-                          objectFit: "contain",
-                          backgroundColor: "#fff",
-                        }}
+                        style={{ objectFit: "contain", backgroundColor: "#fff" }}
                       />
                     </div>
                     <div className="scroll-panel-text">
@@ -197,17 +164,15 @@ export default function AboutPage() {
             </>
           ) : (
             <div className="explore-grid">
-              {/* Box 1 */}
               <div className="explore-box">
                 <div className="scroll-panel-header">
                   <h2 className="scroll-panel-title">Get A QUOTE</h2>
-                </div>{" "}
+                </div>
                 <div className="static-panel-image">
                   <Image src="/images/latest/get_a_q.png" alt="Get a Quote" fill className="object-cover" />
                 </div>
               </div>
 
-              {/* Box 2 */}
               <div className="explore-box">
                 <div className="scroll-panel-header">
                   <h2 className="scroll-panel-title">Our Labs</h2>
@@ -217,19 +182,10 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Box 3 */}
               <div className="explore-box">
                 <div className="scroll-panel-header">
                   <h2 className="scroll-panel-title">Our Team</h2>
-                  <button
-                    onClick={() => setIsAtEnd(false)}
-                    className="scroll-indicator"
-                    aria-label="Scroll to next section"
-                  >
-                    <ChevronRight size={32} />
-                    <ChevronRight size={32} className="-ml-4" />
-                    <ChevronRight size={32} className="-ml-4" />
-                  </button>
+                  <ScrollIndicator onClick={() => setIsAtEnd(false)} ariaLabel="Scroll to next section" />
                 </div>
                 <div className="static-panel-image">
                   <Image src="/images/latest/development.jpg" alt="Our Team" fill className="object-cover" />
@@ -238,8 +194,7 @@ export default function AboutPage() {
             </div>
           )}
         </div>
-
-        <div className="rule" style={{ marginTop: "20px" }}></div>
+        <Divider className="mt-5" />
       </section>
     </SiteLayout>
   )
