@@ -19,7 +19,7 @@ export default function Page() {
         </div>
       </section>
 
-      <main id="main">{/* No content here, as per your request for the homepage */}</main>
+      <main id="main"></main>
     </SiteLayout>
   )
 }

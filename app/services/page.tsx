@@ -41,7 +41,7 @@ export default function ServicesPage() {
       image: "/images/latest/education.png",
     },
     {
-      id: "get-a-quote",
+      id: "onboarding",
       title: "GET A QUOTE",
       image: "/images/latest/get_a_q.png",
     },
@@ -54,9 +54,13 @@ export default function ServicesPage() {
           <div className="services-scroll-container" ref={scrollContainerRef}>
             {services.map((service, index) => (
               <Link
-                href={
-                  service.id === "labs" ? "/labs" : `/services/${service.id}`
-                }
+              href={
+                service.id === "labs"
+                  ? "/labs"
+                  : service.id === "onboarding"
+                  ? "/onboarding"
+                  : `/services/${service.id}`
+              }
                 key={service.id}
                 className="service-box"
               >

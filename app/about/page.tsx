@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import SiteLayout from "@/components/site-layout"
 import ScrollIndicator from "@/components/shared/scroll-indicator"
+import Link from "next/link"
 
 export default function AboutPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -164,21 +165,27 @@ export default function AboutPage() {
           ) : (
             <div className="explore-grid">
               <div className="explore-box">
+              <Link href="/onboarding" aria-label="Get a Quote" className="block h-full">
+
                 <div className="scroll-panel-header">
                   <h2 className="scroll-panel-title">Get A QUOTE</h2>
                 </div>
                 <div className="static-panel-image">
                   <Image src="/images/latest/get_a_q.png" alt="Get a Quote" fill className="object-cover" />
                 </div>
+                </Link>
               </div>
 
               <div className="explore-box">
+                <Link href="/labs" aria-label="OUR LABS" className="block h-full">
+
                 <div className="scroll-panel-header">
                   <h2 className="scroll-panel-title">Our Labs</h2>
                 </div>
                 <div className="static-panel-image">
                   <Image src="/images/latest/our_labs.png" alt="Our Labs" fill className="object-cover" />
                 </div>
+                </Link>
               </div>
 
               <div className="explore-box">

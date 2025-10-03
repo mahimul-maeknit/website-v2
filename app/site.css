@@ -587,10 +587,11 @@ input[type="checkbox"]:checked + .radio-indicator {
   padding: 8px;
   display: flex;
   flex-direction: column;
+  height: 450px;
 }
 
 .explore-box .static-panel-image {
-  height: 400px; /* Increased from default 350px */
+  height: 350px; /* Increased from default 350px */
   margin-top: 2px; /* Reduced from 16px */
 }
 
