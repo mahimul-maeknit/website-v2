@@ -66,7 +66,7 @@ export default function AboutPage() {
                       </p>
                       <p>
                         With advanced studios in <strong>NYC</strong> and <strong>LONDON</strong>, we combine cutting
-                        edge technology, deep expertise, and vetted global factory access to deliver knitwear at the
+                        edge technology, deep expertise, and a global factory marketplace to deliver knitwear at the
                         speed of modern fashion.
                       </p>
                       <p>

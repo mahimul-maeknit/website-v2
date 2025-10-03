@@ -132,7 +132,6 @@ export default function DevelopmentPage() {
         </>}
         </div>
 
-        <div className="rule" style={{ marginTop: "20px" }}></div>
       </section>
     </SiteLayout>
   );

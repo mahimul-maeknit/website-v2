@@ -93,7 +93,6 @@ export default function ServicesPage() {
             ))}
           </div>
         </div>
-        <Divider className="mt-5" />
       </section>
     </SiteLayout>
   );

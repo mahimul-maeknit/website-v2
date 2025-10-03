@@ -63,7 +63,7 @@ export default function SwatchingPage() {
                       <p>
                         <strong>Track progress</strong> in real time on our
                         collaborative digital whiteboard, and skip the
-                        guesswork—we turn your sketches into production-ready
+                        guesswork. We turn your sketches into production ready
                         knitwear.
                       </p>
                       <p>
@@ -134,7 +134,6 @@ export default function SwatchingPage() {
           )}
         </div>
 
-        <div className="rule" style={{ marginTop: "20px" }}></div>
       </section>
     </SiteLayout>
   );

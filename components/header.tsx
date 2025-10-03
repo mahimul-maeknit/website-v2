@@ -9,7 +9,7 @@ export default function Header() {
         <Link href="/" className="brand" aria-label="MAEKNIT Home">
           <span className="brand-text">maeknit</span>
         </Link>
-        <div className="tagline subheading caps">Knitwear Development Lab</div>
+        <div className="tagline subheading caps">Knitwear DEVELOPMENT & MARKETPLACE</div>
       </div>
     </header>
   )

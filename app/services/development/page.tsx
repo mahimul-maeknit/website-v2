@@ -35,7 +35,7 @@ export default function DevelopmentPage() {
                 <div className="about-scroll-panel">
                   <div className="scroll-panel-header">
                     <h2 className="scroll-panel-title">
-                      FROM CONCEPT TO COTUORE
+                      FROM SKETCH TO SMS
                     </h2>
                     {/* Always show chevron */}
                     <button
@@ -52,13 +52,13 @@ export default function DevelopmentPage() {
                     <div className="scroll-panel-text">
                       <p>
                         <strong>Skip the guesswork. </strong>
-                        We turn your sketches into production-ready knitwear
+                        We turn your sketches into production ready knitwear
                         using advanced 3D tools, virtual mannequins, and
-                        real-time simulation.
+                        real time simulation.
                       </p>
                       <p>
                         <strong>FOR BRANDS </strong> <br></br>
-                        Streamlined process from concept to market-ready samples
+                        Streamlined process from concept to market ready samples
                       </p>
 
                       <p>
@@ -148,7 +148,6 @@ export default function DevelopmentPage() {
           )}
         </div>
 
-        <div className="rule" style={{ marginTop: "20px" }}></div>
       </section>
     </SiteLayout>
   );

@@ -46,18 +46,13 @@ export default function LabsPage() {
                   <div className="scroll-panel-content no-image">
                     <div className="scroll-panel-text">
                       <p>
-                        Our two state-of-the-art facilities are designed for speed, precision, 
-                        and sustainability. Light-filled studios built to inspire creativity and 
-                        hands-on collaboration.
+                      With laboratories in New York and London and a global factory marketplace, we bring technical excellence back to the center of fashion. We don’t just accelerate timelines, we redesign the system. Transparent, responsive, and built to match the rhythm of modern design.
                       </p>
                       <p>
-                        Equipped with the most advanced, low-energy machinery, we maximize 
-                        efficiency while minimizing environmental impact.
+                      We collaborate with brands, retailers and emerging designers to bring ideas to life. Whether it’s a single sample or a full collection. Every piece we produce reflects discipline, care, and a lifetime of experience.
                       </p>
                       <p>
-                        Join us in the world’s fashion hubs, where every idea can be explored, 
-                        refined, and brought to life with the tools, technology, and expertise 
-                        to turn your vision into reality.
+                      We manage the complexity behind the scenes. You receive exactly what you envisioned on time, at scale, without compromise. Delivered to your studio, showroom, or doorstep.
                       </p>
                     </div>
                   </div>
@@ -189,7 +184,6 @@ export default function LabsPage() {
           )}
         </div>
 
-        <div className="rule" style={{ marginTop: "20px" }}></div>
       </section>
     </SiteLayout>
   );

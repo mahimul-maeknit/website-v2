@@ -34,9 +34,6 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
             <li>
               <Link href="/work">Our Work</Link>
             </li>
-            <li>
-              <Link href="/onboarding">Design</Link>
-            </li>
             <li className="brand-logo">
               <BrandLogo />
             </li>

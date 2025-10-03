@@ -51,18 +51,18 @@ export default function DevelopmentPage() {
                   <div className="scroll-panel-content no-image">
                     <div className="scroll-panel-text">
                       <p>
-                      From  <strong>rapid development</strong> in our NYC and London labs—designed for speed, flexibility, and hands-on collaboration—to 
-                      <strong>small-batch domestic runs</strong> for boutiques and test markets, we adapt to your needs. 
+                      From  <strong>rapid development</strong> in our NYC and London labs designed for speed, flexibility, and hands on collaboration to 
+                      <strong> small batch domestic runs</strong> for boutiques and test markets, we adapt to your needs. 
                       </p>
                       <p>
-                      Our vetted global network spans the USA, UK, Peru, Turkey, Romania, Bulgaria, Spain, Bangladesh, Canada, Madagascar, and beyond, 
+                      Our vetted factory marketplace spans the USA, UK, Peru, Turkey, Romania, Bulgaria, Spain, Bangladesh, Canada, Madagascar, and beyond, 
                       delivering the same uncompromising standard from <strong>prototype to full production.</strong>
 
                       </p>
 
                       <p>
-                      With <strong>no minimums,</strong> transparent pricing, and fast quoting for production-ready designs, 
-                      <strong>scaling has never been simpler.</strong>
+                      With <strong>no minimums,</strong> transparent pricing, and fast quoting for production ready designs, 
+                      <strong> scaling has never been simpler.</strong>
                       </p>
                     </div>
                   </div>
@@ -130,8 +130,6 @@ export default function DevelopmentPage() {
             </div>
           )}
         </div>
-
-        <div className="rule" style={{ marginTop: "20px" }}></div>
       </section>
     </SiteLayout>
   );
