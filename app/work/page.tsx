@@ -164,7 +164,7 @@ export default function WorkPage() {
                 </div>
 
                 <div className="service-box-image">
-                  <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
+                  <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-contain" />
                 </div>
 
                 <div className="mt-4 flex justify-between items-end">
