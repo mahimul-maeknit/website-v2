@@ -368,7 +368,7 @@ input[type="checkbox"]:checked + .radio-indicator {
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  
+
   width: 387px;
   height: 445px;
 }
@@ -379,7 +379,7 @@ input[type="checkbox"]:checked + .radio-indicator {
   display: flex;
   flex-direction: column;
   justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
+  align-items: center; /* horizontal centering */
 }
 
 .static-panel-title {
@@ -654,32 +654,27 @@ input[type="checkbox"]:checked + .radio-indicator {
   padding-top: 12px;
   margin: 0;
   background: var(--muted-bg);
-  min-height: 445px; /* Match carousel height */
-  max-height: 445px;
+  min-height: 455px;
+  max-height: 455px;
 }
 
 .services-scroll-wrapper {
   max-width: var(--max-w);
   margin: 0 auto;
-  height: clamp(220px, 38vw, 520px);
-  padding: 24px 0;
-  min-height: 600px;
-  max-height: 600px;
-  /* Hide any overflow to prevent partial boxes from showing */
+  height: 455px;
+  padding: 0;
   overflow: hidden;
 }
 
 .services-scroll-container {
   display: grid;
   grid-auto-flow: column;
-  /* Fixed calculation to fit exactly 3 boxes with 24px gaps */
   grid-auto-columns: calc((100% - 48px) / 3);
   gap: 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  height: 400px;
-  /* Hide scrollbar for all browsers */
+  height: 100%;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
@@ -700,6 +695,7 @@ input[type="checkbox"]:checked + .radio-indicator {
   color: inherit;
   transition: transform 0.2s;
   cursor: pointer;
+  height: 100%;
 }
 
 .service-box:hover {
@@ -745,7 +741,6 @@ input[type="checkbox"]:checked + .radio-indicator {
   position: relative;
   width: 100%;
   flex: 1;
-  min-height: 300px;
 }
 
 /* Responsive adjustments */

@@ -1,20 +1,13 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import SiteLayout from "@/components/site-layout";
-import ScrollIndicator from "@/components/shared/scroll-indicator";
-import BrandLogo from "@/components/shared/brand-logo";
-import Divider from "@/components/shared/divider";
-import { useHorizontalScroll } from "@/hooks/use-horizontal-scroll";
+import Image from "next/image"
+import SiteLayout from "@/components/site-layout"
+import ScrollIndicator from "@/components/shared/scroll-indicator"
+import BrandLogo from "@/components/shared/brand-logo"
+import { useHorizontalScroll } from "@/hooks/use-horizontal-scroll"
 
 export default function WorkPage() {
-  const {
-    scrollContainerRef,
-    canScrollLeft,
-    canScrollRight,
-    scrollToNext,
-    scrollToPrev,
-  } = useHorizontalScroll();
+  const { scrollContainerRef, canScrollLeft, canScrollRight, scrollToNext, scrollToPrev } = useHorizontalScroll()
 
   const workItems = [
     {
@@ -86,7 +79,7 @@ export default function WorkPage() {
       title: "KNIT BASKETWEAVE SWEATER",
       client: "LE PERE",
       manufactured: "Sep 02, 2025",
-      yarnType: "LINEN AND ORGANIC COTTON", 
+      yarnType: "LINEN AND ORGANIC COTTON",
       knitBy: "MAEKNIT BULGARIA",
       image: "/images/images_old/smart_pant.webp",
     },
@@ -140,11 +133,11 @@ export default function WorkPage() {
       knitBy: "MAEKNIT UK",
       image: "/images/images_old/el_pink.jpg",
     },
-  ];
+  ]
 
   return (
     <SiteLayout>
-      <section className="works-content-frame" aria-label="Our Work">
+      <section className="services-content-frame" aria-label="Our Work">
         <div className="services-scroll-wrapper">
           <div className="services-scroll-container" ref={scrollContainerRef}>
             {workItems.map((item, index) => (
@@ -171,26 +164,17 @@ export default function WorkPage() {
                 </div>
 
                 <div className="service-box-image">
-                  <Image
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
+                  <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
                 </div>
 
                 <div className="mt-4 flex justify-between items-end">
                   <div>
-                    <p className="text-xs font-medium uppercase mb-1">
-                      YARN TYPE
-                    </p>
+                    <p className="text-xs font-medium uppercase mb-1">YARN TYPE</p>
                     <p className="text-xs text-gray-800">{item.yarnType}</p>
                   </div>
                   <div className="flex items-end gap-3 text-right">
                     <div>
-                      <p className="text-xs font-medium uppercase mb-1">
-                        KNIT BY
-                      </p>
+                      <p className="text-xs font-medium uppercase mb-1">KNIT BY</p>
                       <p className="text-xs text-gray-800">{item.knitBy}</p>
                     </div>
                     <BrandLogo size={24} />
@@ -202,5 +186,5 @@ export default function WorkPage() {
         </div>
       </section>
     </SiteLayout>
-  );
+  )
 }
