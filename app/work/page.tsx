@@ -106,7 +106,7 @@ export default function WorkPage() {
       manufactured: "Sep 02, 2025",
       yarnType: "VISCOSE",
       knitBy: "MAEKNIT UK",
-      image: "/images/images_old/white_socks.jpg",
+      image: "/images/images_old/ws.png",
     },
 
     {
@@ -115,7 +115,7 @@ export default function WorkPage() {
       manufactured: "Aug 12, 2025",
       yarnType: "VISCOSE",
       knitBy: "MAEKNIT UK",
-      image: "/images/images_old/el_all_white.jpg",
+      image: "/images/images_old/el_aw.png",
     },
     {
       title: "RUFFLE TOP",
@@ -123,7 +123,7 @@ export default function WorkPage() {
       manufactured: "Aug 12, 2025",
       yarnType: "VISCOSE",
       knitBy: "MAEKNIT UK",
-      image: "/images/images_old/el_black_pant.jpg",
+      image: "/images/images_old/el_bp.png",
     },
     {
       title: "TURTLENECK TOP",
@@ -131,7 +131,7 @@ export default function WorkPage() {
       manufactured: "Aug 12, 2025",
       yarnType: "VISCOSE",
       knitBy: "MAEKNIT UK",
-      image: "/images/images_old/el_pink.jpg",
+      image: "/images/images_old/el_p.png",
     },
   ]
 

@@ -267,12 +267,14 @@ p {
   padding: 40px 0;
 }
 
+/* Updated onboarding-grid to fit within about-layout structure */
 .onboarding-grid {
-  max-width: var(--max-w);
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  width: 1220px;
+  height: 445px;
+  margin: 0 auto;
 }
 
 .onboarding-panel {
@@ -280,21 +282,8 @@ p {
   color: #fff;
   padding: 24px;
   border-radius: 6px;
-}
-
-.option-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.option-list li {
-  margin-bottom: 12px;
-}
-.option-list label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: var(--body-size);
+  /* Added border to match other pages */
+  border: 1px solid var(--border);
 }
 
 input[type="radio"],
@@ -740,34 +729,347 @@ input[type="checkbox"]:checked + .radio-indicator {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-    height: auto;
+@media (max-width: 1280px) {
+  .about-layout,
+  .swatching-layout {
+    width: 100%;
+    max-width: 100%;
   }
 
+  .explore-grid-full {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .about-scroll-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --max-w: 100%;
+    --gutter: 16px;
+  }
+
+  .carousel-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px;
+  }
+
+  .about-layout,
   .swatching-layout {
     grid-template-columns: 1fr;
     height: auto;
+    width: 100%;
   }
 
   .about-static-panel {
-    display: none;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
   }
 
-  .scroll-panel-content {
-    grid-template-columns: 1fr;
+  .static-panel-inner {
+    width: 100%;
+    height: auto;
+    padding: 24px;
   }
 
-  .about-scroll-panel {
-    min-height: 500px;
+  .static-panel-image {
+    width: 100%;
+    height: 300px;
   }
 
-  .services-scroll-container {
-    grid-auto-columns: calc(100% - 48px);
+  .about-scroll-container {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
   }
 
   .explore-grid-full {
     grid-template-columns: 1fr;
+    height: auto;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .explore-box {
+    min-height: 400px;
+  }
+
+  .onboarding-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .onboarding-panel {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile typography adjustments */
+  :root {
+    --heading-size: 18px;
+    --subheading-size: 15px;
+    --menu-size: 12px;
+    --body-size: 14px;
+    --body-subheading-size: 16px;
+  }
+
+  /* Mobile header adjustments */
+  .site-header {
+    margin-top: 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
+    padding: 0 16px;
+  }
+
+  .brand-text {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 12px !important;
+    margin-top: 8px !important;
+    text-align: center;
+  }
+
+  /* Mobile content frame adjustments */
+  .about-content-frame {
+    min-height: auto;
+    padding: 16px 0;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+    width: 100%;
+  }
+
+  .about-static-panel {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-right: none;
+  }
+
+  .static-panel-inner {
+    width: 100%;
+    padding: 20px 16px;
+  }
+
+  .static-panel-title {
+    font-size: 16px !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  .static-panel-image {
+    width: 100%;
+    height: 250px;
+    margin-top: 16px;
+  }
+
+  /* Mobile scroll panel adjustments */
+  .about-scroll-container {
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-right: none;
+  }
+
+  .about-scroll-panel {
+    padding: 20px 16px;
+    min-height: auto;
+  }
+
+  .scroll-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .scroll-panel-title {
+    font-size: 16px !important;
+  }
+
+  .scroll-panel-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .scroll-panel-image {
+    width: 100%;
+    height: 250px;
+    margin-top: 0;
+  }
+
+  .scroll-panel-text {
+    padding-top: 0;
+  }
+
+  .scroll-panel-text p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Mobile explore grid adjustments */
+  .explore-grid,
+  .explore-grid-full {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .explore-box {
+    min-height: 350px;
+    padding: 16px;
+  }
+
+  .collaborate-options {
+    padding: 16px;
+  }
+
+  .collaborate-options p {
+    font-size: 13px;
+    margin: 10px 0;
+  }
+
+  /* Mobile onboarding adjustments */
+  .onboarding-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .onboarding-panel {
+    padding: 20px 16px;
+    min-height: auto;
+  }
+
+  /* Mobile footer adjustments */
+  .bottom-brand {
+    padding: 16px 0;
+  }
+
+  .brand-nav {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+    justify-content: center;
+  }
+
+  .brand-nav li {
+    text-align: center;
+  }
+
+  .brand-nav li:first-child,
+  .brand-nav li:last-child {
+    text-align: center;
+  }
+
+  .brand-nav a {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+
+  .brand-logo {
+    width: 100%;
+    order: -1;
+    margin-bottom: 12px;
+  }
+
+  .city-social {
+    padding: 16px;
+  }
+
+  .city {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+
+  .social {
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .social a {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Mobile services adjustments */
+  .services-content-frame {
+    min-height: auto;
+    max-height: none;
+    padding: 16px 0;
+  }
+
+  .services-scroll-wrapper {
+    height: auto;
+    padding: 0 16px;
+  }
+
+  .services-scroll-container {
+    grid-auto-columns: 100%;
+    gap: 16px;
+    height: auto;
+  }
+
+  .service-box {
+    min-height: 400px;
+    padding: 20px 16px;
+  }
+
+  .service-box-title {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  .brand-text {
+    font-size: 28px;
+  }
+
+  .tagline {
+    font-size: 11px !important;
+    letter-spacing: 0.2rem;
+  }
+
+  .scroll-panel-title,
+  .static-panel-title {
+    font-size: 14px !important;
+    letter-spacing: 0.15em;
+  }
+
+  .scroll-panel-text p {
+    font-size: 14px;
+  }
+
+  .explore-box {
+    min-height: 300px;
+  }
+
+  .static-panel-image,
+  .scroll-panel-image {
+    height: 200px;
   }
 }
