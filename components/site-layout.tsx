@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
-import Link from "next/link"
-import Header from "@/components/header"
-import SocialIcons from "@/components/shared/social-icons"
-import BrandLogo from "@/components/shared/brand-logo"
-import Divider from "@/components/shared/divider"
+import type React from "react";
+import Link from "next/link";
+import Header from "@/components/header";
+import SocialIcons from "@/components/shared/social-icons";
+import BrandLogo from "@/components/shared/brand-logo";
+import Divider from "@/components/shared/divider";
 
 interface SiteLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function SiteLayout({ children }: SiteLayoutProps) {
@@ -35,7 +35,9 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
               <Link href="/work">Our Work</Link>
             </li>
             <li className="brand-logo">
-              <BrandLogo />
+              <Link href="/">
+                <BrandLogo />
+              </Link>
             </li>
           </ul>
         </div>
@@ -47,5 +49,5 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
         </div>
       </section>
     </>
-  )
+  );
 }
