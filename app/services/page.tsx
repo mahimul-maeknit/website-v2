@@ -41,7 +41,7 @@ export default function ServicesPage() {
       image: "/images/latest/education.png",
     },
     {
-      id: "onboarding",
+      id: "quote",
       title: "GET A QUOTE",
       image: "/images/latest/get_a_q.png",
     },
@@ -60,7 +60,7 @@ export default function ServicesPage() {
                   : service.id === "education"
                   ? "/onboarding"  // Education points to onboarding page
                   : service.id === "quote"
-                  ? "/get-quote"
+                  ? "/onboarding"
                   : `/services/${service.id}`
               }
                 key={service.id}
