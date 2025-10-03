@@ -1,18 +1,18 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import Image from "next/image";
-import SiteLayout from "@/components/site-layout";
-import { ChevronRight } from "lucide-react";
-import Link from "next/link";
+import { useState } from "react"
+import Image from "next/image"
+import SiteLayout from "@/components/site-layout"
+import { ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 export default function DevelopmentPage() {
-  const [showExploreGrid, setShowExploreGrid] = useState(false);
+  const [showExploreGrid, setShowExploreGrid] = useState(false)
 
   return (
     <SiteLayout>
       <section className="about-content-frame" aria-label="Development">
-        <div className={`swatching-layout ${showExploreGrid ? "full" : ""}`}>
+        <div className={`about-layout ${showExploreGrid ? "full" : ""}`}>
           {!showExploreGrid ? (
             <>
               {/* Left static panel */}
@@ -34,9 +34,7 @@ export default function DevelopmentPage() {
               <div className="about-scroll-container">
                 <div className="about-scroll-panel">
                   <div className="scroll-panel-header">
-                    <h2 className="scroll-panel-title">
-                      FROM SKETCH TO SMS
-                    </h2>
+                    <h2 className="scroll-panel-title">FROM SKETCH TO SMS</h2>
                     {/* Always show chevron */}
                     <button
                       onClick={() => setShowExploreGrid(true)}
@@ -52,9 +50,8 @@ export default function DevelopmentPage() {
                     <div className="scroll-panel-text">
                       <p>
                         <strong>Skip the guesswork. </strong>
-                        We turn your sketches into production ready knitwear
-                        using advanced 3D tools, virtual mannequins, and
-                        real time simulation.
+                        We turn your sketches into production ready knitwear using advanced 3D tools, virtual
+                        mannequins, and real time simulation.
                       </p>
                       <p>
                         <strong>FOR BRANDS </strong> <br></br>
@@ -63,14 +60,12 @@ export default function DevelopmentPage() {
 
                       <p>
                         <strong>FOR TECHNICAL TEAMS</strong> <br></br>
-                        Full access to CAD programming, linking expertise, and
-                        3D advanced modeling
+                        Full access to CAD programming, linking expertise, and 3D advanced modeling
                       </p>
 
                       <p>
-                        Whether you’re refining a signature silhouette or
-                        building something entirely new, we meet you where you
-                        are and move at your pace.
+                        Whether you’re refining a signature silhouette or building something entirely new, we meet you
+                        where you are and move at your pace.
                       </p>
                     </div>
                   </div>
@@ -109,12 +104,7 @@ export default function DevelopmentPage() {
                   <h2 className="scroll-panel-title">GET A QUOTE</h2>
                 </div>
                 <Link href="/onboarding" className="static-panel-image">
-                  <Image
-                    src="/images/latest/get_a_q.png"
-                    alt="Get a Quote"
-                    fill
-                    className="object-cover"
-                  />
+                  <Image src="/images/latest/get_a_q.png" alt="Get a Quote" fill className="object-cover" />
                 </Link>
               </div>
 
@@ -132,23 +122,14 @@ export default function DevelopmentPage() {
                     <ChevronRight size={32} className="-ml-4" />
                   </button>
                 </div>
-                <Link
-                  href="/services/production"
-                  className="static-panel-image"
-                >
-                  <Image
-                    src="/images/latest/about_us_left_1.jpg"
-                    alt="Ready to Scale"
-                    fill
-                    className="object-cover"
-                  />
+                <Link href="/services/production" className="static-panel-image">
+                  <Image src="/images/latest/about_us_left_1.jpg" alt="Ready to Scale" fill className="object-cover" />
                 </Link>
               </div>
             </div>
           )}
         </div>
-
       </section>
     </SiteLayout>
-  );
+  )
 }

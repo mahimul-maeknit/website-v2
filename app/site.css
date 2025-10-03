@@ -576,10 +576,11 @@ input[type="checkbox"]:checked + .radio-indicator {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  width: 100%;
-  max-width: var(--max-w);
+  width: 1220px;
+  max-width: 1220px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 0; /* Removed padding to prevent overflow */
+  height: 445px; /* Match the about-layout height */
 }
 
 .explore-box {
@@ -587,12 +588,7 @@ input[type="checkbox"]:checked + .radio-indicator {
   padding: 8px;
   display: flex;
   flex-direction: column;
-  height: 450px;
-}
-
-.explore-box .static-panel-image {
-  height: 350px; /* Increased from default 350px */
-  margin-top: 2px; /* Reduced from 16px */
+  height: 100%; /* Use full height of grid */
 }
 
 .overlay-text {

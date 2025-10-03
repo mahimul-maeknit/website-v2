@@ -57,8 +57,10 @@ export default function ServicesPage() {
               href={
                 service.id === "labs"
                   ? "/labs"
-                  : service.id === "onboarding"
-                  ? "/onboarding"
+                  : service.id === "education"
+                  ? "/onboarding"  // Education points to onboarding page
+                  : service.id === "quote"
+                  ? "/get-quote"
                   : `/services/${service.id}`
               }
                 key={service.id}
