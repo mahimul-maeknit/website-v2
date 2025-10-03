@@ -9,7 +9,7 @@ export default function Page() {
       <section className="hero-frame" aria-label="Featured">
         <div className="container" style={{ position: "relative", width: "100%", height: "440px" }}>
           <Image
-            src="/images/cover.png"
+            src="/images/latest/cover.png"
             alt="MAEKNIT Cover"
             fill
             priority
